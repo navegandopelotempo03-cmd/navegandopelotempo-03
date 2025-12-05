@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1940 a 1950 - HISTÓRIA DA COMPUTAÇÃO E ORIGENS DA INTERNET</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/reciclavel.css">
+</head>
+
+<body>
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <header>
+    <h1>1940 a 1950 - HISTÓRIA DA COMPUTAÇÃO E ORIGENS DA INTERNET</h1>
+    <h2>A história da internet começa muito antes de qualquer rede existir</h2>
+  </header>
+
+  <main>
+    <article class="timeline-card">
+      <img src="./img/40-50.jpg" alt="Computador dos anos 1940" class="hero">
+      <div class="content">
+        <h2>📋 Resumo</h2>
+        <p>
+            <h3>Para entender como chegamos à ideia de conectar computadores, precisamos mergulhar nas décadas de 1940 e 1950, um período marcado por guerra, espionagem, corrida tecnológica e os primeiros sonhos de máquinas capazes de pensar.
+            É impossível falar desse período sem relembrar que o mundo estava em guerra, e que, pela primeira vez na história, cálculos matemáticos, códigos secretos e dispositivos eletrônicos passaram a determinar rumos políticos.
+            A tecnologia deixou de ser apenas um campo de estudo e se tornou arma.</h3>
+        </p>
+
+
+        <br>
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="more-arpanet" id="toggle-arpanet">
+          <h3>Ler mais</h3> <span class="chev">▶</span>
+        </button>
+
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="sources-collapse" id="toggle-sources">
+            <h3>Fontes</h3> <span class="chev">▶</span>
+          </button>
+        </div>
+
+        <div id="more-arpanet" class="wiki-collapse" aria-hidden="true">
+          <div class="inner">
+            <strong><h2>📚 Detalhes</h2></strong>
+            <p>
+                <h3>Durante a Segunda Guerra Mundial, cientistas e matemáticos foram mobilizados por governos para tentar decifrar mensagens inimigas, prever trajetórias de bombardeios, calcular probabilidades de ataques e criar sistemas de comunicação mais eficientes. Nesse cenário, surgiram as primeiras máquinas eletrônicas programáveis, que ainda não eram “computadores” no sentido moderno, mas enormes equipamentos que funcionavam com milhares de válvulas, fios e interruptores. Elas ocupavam salas inteiras, aqueciam como fornos e exigiam equipes de engenheiros para funcionar.</h3>
+                 
+                <div class="gallery">
+          <img src="./img/computador40.jpg" alt="Computador de 1940">
+        </div>
+        <br>
+                <h3>Um dos grandes nomes dessa fase é Alan Turing, cujo papel foi tão crucial que muitos historiadores o chamam de “pai da computação moderna”. Trabalhando para o serviço de inteligência britânico, Turing liderou a equipe que criou máquinas capazes de quebrar o código da Enigma, o sistema criptográfico utilizado pelos nazistas. A máquina desenvolvida por ele e sua equipe em Bletchley Park, conhecida como “Bombe”, era uma das primeiras formas de automação da lógica, antecipando o conceito de algoritmo e mostrando que máquinas podiam executar processos repetitivos muito mais rápido que humanos. Estimativas históricas sugerem que o trabalho de Turing encurtou a guerra em pelo menos dois anos.
+                Esse período é tão marcante que até hoje inspira filmes e séries.</h3>
+
+                      <div class="gallery">
+          <img src="./img/AlanTuring.jpg" alt="Alan Turing">
+        </div>
+        <br>    
+                <h3>Enquanto Turing trabalhava na Inglaterra, nos EUA outros cientistas criavam máquinas ainda mais ambiciosas. Em 1945 foi concluído o ENIAC (Electronic Numerical Integrator and Computer), considerado por muitos o primeiro computador eletrônico de propósito geral. Ele tinha cerca de 18 mil válvulas e pesava mais de 30 toneladas. Seu objetivo inicial era calcular tabelas balísticas para o Exército norte-americano, mas logo demonstrou capacidade para realizar cálculos complexos que, antes, levariam dias ou semanas.
+                Esse período também viu a união inédita entre universidades, exércitos e laboratórios privados. Harvard, MIT, Bell Labs, Princeton e o laboratório Los Alamos (do Projeto Manhattan) se tornaram centros de inovação científica. As necessidades militares e nucleares exigiram novas formas de processamento e armazenamento de informação, o que levou ao desenvolvimento de tecnologias como fitas magnéticas, cartões perfurados e memórias mais estáveis.
+                Paralelamente ao hardware, surgia um pensamento matemático novo sobre informação.</h3>
+                <br>
+
+                <h3>Em 1948, Claude Shannon publicou seu artigo “A Theory of Communication”, considerado a obra fundadora da teoria da informação. Shannon demonstrou que qualquer tipo de informação — texto, imagem ou som — podia ser convertido em códigos binários (0 e 1). Essa descoberta não apenas permitiu a construção de sistemas digitais, mas também abriu caminho para pensar comunicação à distância de forma eficiente, com correção de erros e padronização. Sem Shannon, não haveria internet, compressão de dados, Wi-Fi, redes móveis nem criptografia moderna.</h3>
+                <br>
+
+                <h3>Outro avanço marcante da época foi o trabalho de John von Neumann, que descreveu uma arquitetura de computador capaz de armazenar programas na memória, criando o modelo que praticamente todos os computadores seguem até hoje. Essa ideia de que máquinas poderiam modificar seu próprio comportamento ao ler instruções armazenadas – os programas – foi revolucionária e iniciou a era da computação programável.</h3>
+                         <div class="gallery">
+          <img src="./img/JhonVonNeumann.jpg" alt="Jhon Von Neumann">
+        </div>
+        <br>
+
+                <h3>A influência política e militar desse período também não pode ser subestimada. A Segunda Guerra terminou em 1945, mas logo entrou em cena a Guerra Fria, ampliando a corrida científica entre EUA e União Soviética. A ameaça de espionagem, ataques nucleares e sabotagem fez com que os EUA investissem massivamente em pesquisa. Esse clima deu origem a organizações como a RAND Corporation e, mais tarde, a própria DARPA (1958), que se tornaria o berço da ARPANET — o embrião da internet. Mas mesmo antes dela, a década de 1950 já estava repleta de centros de pesquisa militares tentando melhorar comunicações, radares, satélites e sistemas de defesa.
+                Culturalmente, a crença em máquinas inteligentes começou a aparecer na literatura e na ficção científica. Isaac Asimov publicava suas histórias dos robôs (as famosas Três Leis da Robótica), que ajudaram a moldar a visão popular de inteligência artificial. Revistas de ciência, como Scientific American e Popular Mechanics, começaram a destacar computadores como “máquinas do futuro”, ainda que restritas ao ambiente militar e científico.</h3>
+       <br>
+          
+       <h3>Do ponto de vista tecnológico, os computadores de 1940 e 1950 eram extremamente limitados, mas abriram as portas para tudo o que viria. Eles funcionavam com válvulas (que queimavam facilmente), tinham pouquíssima memória, eram lentos e difíceis de programar. Mesmo assim, provaram que era possível automatizar cálculos complexos e processar grandes volumes de dados — pré-requisitos fundamentais para a interconexão futura.
+        Ao final dos anos 1950, apesar de a internet ainda não existir nem como conceito, a humanidade já possuía os ingredientes essenciais para inventá-la: máquinas capazes de processar dados eletronicamente, uma teoria matemática que descrevia como a informação poderia ser transmitida, um ambiente político que demandava comunicação segura e confiável, e uma comunidade de cientistas preparada para imaginar novas formas de conectar dispositivos. 
+      Assim, a década de 1940–1950 é mais do que o “prólogo” da internet. Ela é o terreno fértil onde ideias matemáticas, necessidades militares, avanços eletrônicos e teorias revolucionárias se encontraram. Antes mesmo de existir a palavra “internet”, já existia o desejo de acelerar a informação, decodificá-la, armazená-la e automatizá-la. Esse conjunto de avanços criou o solo científico, técnico e cultural que permitiria, algumas décadas depois, conectar o mundo inteiro.</h3>
+<br>
+                <hr>
+<p>
+   <h3>Filme: “O Jogo da Imitação” (2014).</h3>
+  <a
+    href="https://www.youtube.com/watch?v=YIkKbMcJL_4&t=1s"
+    title="https://www.youtube.com/watch?v=YIkKbMcJL_4&t=1s">
+    <h3>Trailer: https://www.youtube.com/watch?v=YIkKbMcJL_4&t=1s</h3></a>.
+
+   <h3>Documentario: “Codebreakers” (2011).</h3>
+  <a
+    href="https://www.youtube.com/watch?v=STRfkfUlQdA"
+    title="https://www.youtube.com/watch?v=STRfkfUlQdA">
+    <h3>Trailer: https://www.youtube.com/watch?v=STRfkfUlQdA</h3></a>.
+
+   <h3>Artigo: “A Theory of Communication” - Claude Shannon.</h3>
+  <a
+    href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf"
+    title="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">
+    <h3>PDF: https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf</h3></a>.
+
+    <h3>Livro: “The Information” - James Gleick.</h3>
+  <a
+    href="https://www.amazon.com.br/informa%C3%A7%C3%A3o-James-Gleick/dp/8535922660"
+    title="https://www.amazon.com.br/informa%C3%A7%C3%A3o-James-Gleick/dp/8535922660">
+    <h3>Compra: https://www.amazon.com.br/informa%C3%A7%C3%A3o-James-Gleick/dp/8535922660</h3></a>.
+</p>
+
+<h3>Livro: “ENIAC: The Triumphs and Tragedies of the World's First Computer” - Scott McCartney.</h3>
+  <a
+    href="https://www.amazon.com/ENIAC-Triumphs-Tragedies-Computer-Library/dp/1455128058"
+    title="https://www.amazon.com/ENIAC-Triumphs-Tragedies-Computer-Library/dp/1455128058">
+    <h3>Compra: https://www.amazon.com/ENIAC-Triumphs-Tragedies-Computer-Library/dp/1455128058</h3></a>.
+<br>        
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div id="sources-collapse" class="wiki-collapse" aria-hidden="true">
+        <div class="inner">
+          <strong><h2>🔗 Fontes de Pesquisa</h2></strong>
+          <p>
+            
+<h3>Bletchley Park Research Papers</h3>
+  <a
+    href="https://bletchleypark.org.uk/our-research"
+    title="https://bletchleypark.org.uk/our-research">
+    <h3>https://bletchleypark.org.uk/our-research</h3></a>.
+
+    <h3>The National Archives (UK) – Enigma & Cryptology Collections</h3>
+  <a
+    href="https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/enigma/"
+    title="https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/enigma/">
+    <h3>https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/enigma/</h3></a>.
+
+    <h3>Science Museum Group (UK) – Turing & early computing</h3>
+  <a
+    href="https://www.sciencemuseum.org.uk/objects-and-stories/alan-turing"
+    title="https://www.sciencemuseum.org.uk/objects-and-stories/alan-turing">
+    <h3>https://www.sciencemuseum.org.uk/objects-and-stories/alan-turing</h3></a>.
+
+     <h3>BBC History: “How Alan Turing cracked the Nazi Enigma code”</h3>
+  <a
+    href="https://www.bbc.co.uk/history/historic_figures/turing_alan.shtml"
+    title="https://www.bbc.co.uk/history/historic_figures/turing_alan.shtml">
+    <h3>https://www.bbc.co.uk/history/historic_figures/turing_alan.shtml</h3></a>.
+
+     <h3>•	“The Turing Bombe Rebuild Project” – Bletchley Park Trust</h3>
+  <a
+    href="https://www.bletchleypark.org.uk/learn/learn-about-turing-bombe"
+    title="https://www.bletchleypark.org.uk/learn/learn-about-turing-bombe">
+    <h3>https://www.bletchleypark.org.uk/learn/learn-about-turing-bombe</h3></a>.
+
+    <br>
+    <hr>
+
+     <h3>Singh, Simon – The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography (1999).</h3>
+  <br>
+     <h3>Hodges, Andrew – Alan Turing: The Enigma (1983).</h3>
+
+    <br>
+    <hr>
+
+     <h3>Computer History Museum (CHM) – ENIAC Overview</h3>
+  <a
+    href="https://www.computerhistory.org/revolution/birth-of-the-computer/2/1"
+    title="https://www.computerhistory.org/revolution/birth-of-the-computer/2/1">
+    <h3>https://www.computerhistory.org/revolution/birth-of-the-computer/2/1</h3></a>.
+
+     <h3>Smithsonian National Museum of American History – ENIAC</h3>
+  <a
+    href="https://americanhistory.si.edu/collections/search/object/nmah_334663"
+    title="https://americanhistory.si.edu/collections/search/object/nmah_334663">
+    <h3>https://americanhistory.si.edu/collections/search/object/nmah_334663</h3></a>.
+
+     <h3>U.S. Army Research Laboratory – Historical ENIAC Documents</h3>
+  <a
+    href="https://www.arl.army.mil/heritage/eniac/"
+    title="https://www.arl.army.mil/heritage/eniac/">
+    <h3>https://www.arl.army.mil/heritage/eniac/</h3></a>.
+
+    <br>
+    <hr>
+
+     <h3>Moye, William T. “ENIAC: The Army–University Collaboration” – Army Research Laboratory (1996).</h3>
+<br>
+     <h3>McCartney, Scott – ENIAC: The Triumphs and Tragedies of the World's First Computer (1999).</h3>
+
+    <br>
+    <hr>
+
+     <h3>Institute for Advanced Study (IAS) – Von Neumann Papers</h3>
+  <a
+    href="https://library.ias.edu/collections/von-neumann"
+    title="https://library.ias.edu/collections/von-neumann">
+    <h3>https://library.ias.edu/collections/von-neumann</h3></a>.
+
+     <h3>Von Neumann, John – “First Draft of a Report on the EDVAC” (1945)</h3>
+  <a
+    href="https://web.archive.org/web/20160304075514/http://qss.stanford.edu/~godfrey/vonNeumann/vnedvac.pdf"
+    title="https://web.archive.org/web/20160304075514/http://qss.stanford.edu/~godfrey/vonNeumann/vnedvac.pdf">
+    <h3>https://web.archive.org/web/20160304075514/http://qss.stanford.edu/~godfrey/vonNeumann/vnedvac.pdf</h3></a>.
+
+     <h3>Princeton IAS – History of the Computer Project</h3>
+  <a
+    href="https://www.ias.edu/ideas/2018/von-neumann-computer"
+    title="https://www.ias.edu/ideas/2018/von-neumann-computer">
+    <h3>https://www.ias.edu/ideas/2018/von-neumann-computer</h3></a>.
+
+    <br>
+    <hr>
+
+     <h3>Shannon, C. E. A Mathematical Theory of Communication (Bell System Technical Journal, 1948)</h3>
+  <a
+    href="https://people.math.harvard.edu/~ctm/home/text/books/shannon/shannon.pdf"
+    title="https://people.math.harvard.edu/~ctm/home/text/books/shannon/shannon.pdf">
+    <h3>https://people.math.harvard.edu/~ctm/home/text/books/shannon/shannon.pdf</h3></a>.
+
+     <h3>Bell Labs Archives – Shannon Biography</h3>
+  <a
+    href="https://www.bell-labs.com/about/recognition/shannon/"
+    title="https://www.bell-labs.com/about/recognition/shannon/">
+    <h3>https://www.bell-labs.com/about/recognition/shannon/</h3></a>.
+
+     <h3>MIT – Claude Shannon Research Collections</h3>
+  <a
+    href="https://libraries.mit.edu/shannon/"
+    title="https://libraries.mit.edu/shannon/">
+    <h3>https://libraries.mit.edu/shannon/</h3></a>.
+
+    <br>
+    <hr>
+
+     <h3>United States Holocaust Memorial Museum – WWII Digital Collections</h3>
+  <a
+    href="https://encyclopedia.ushmm.org"
+    title="https://encyclopedia.ushmm.org">
+    <h3>https://encyclopedia.ushmm.org</h3></a>.
+
+     <h3>Imperial War Museums (IWM) – WWII History</h3>
+  <a
+    href="https://www.iwm.org.uk/history"
+    title="https://www.iwm.org.uk/history">
+    <h3>https://www.iwm.org.uk/history</h3></a>.
+
+     <h3>National WWII Museum – Technology in WWII</h3>
+  <a
+    href="https://www.nationalww2museum.org/war/articles/technology"
+    title="https://www.nationalww2museum.org/war/articles/technology">
+    <h3>https://www.nationalww2museum.org/war/articles/technology</h3></a>.
+
+     <h3>RAND Corporation – Early Cold War Research</h3>
+  <a
+    href="https://www.rand.org/pubs/history.html"
+    title="https://www.rand.org/pubs/history.html">
+    <h3>https://www.rand.org/pubs/history.html</h3></a>.
+
+    <h3>Ceruzzi, Paul – A History of Modern Computing (MIT Press, 1998).</h3>
+    <br>
+
+    <h3>Campbell-Kelly, Martin – Computer: A History of the Information Machine (2021).</h3>
+    <br>
+
+<h3>IEEE Annals of the History of Computing</h3>
+  <a
+    href="https://www.computer.org/csdl/magazine/an"
+    title="https://www.computer.org/csdl/magazine/an">
+    <h3>https://www.computer.org/csdl/magazine/an</h3></a>.
+
+    <h3>PBS Documentary – “The Machine That Changed the World”</h3>
+  <a
+    href="https://www.pbs.org/wgbh/aso/databank/series.html"
+    title="https://www.pbs.org/wgbh/aso/databank/series.html">
+    <h3>https://www.pbs.org/wgbh/aso/databank/series.html</h3></a>.
+
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="controls-wide">
+    <button class="btn btn-voltar" onclick="window.history.back()">← Voltar</button>
+    <button class="btn btn-quiz" onclick="window.location.href='quiz40-50.html'">🎯 Quiz</button>
+  </div>
+  
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <!-- VLibras (escondido por padrão) -->
+  <div vw class="enabled" id="vlibras-widget" style="display: none;">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Scripts -->
+  <script src="./js/reciclavel.js"></script>
+  
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".btn-toggle");
+      const icon = btn?.querySelector(".icon");
+      const text = btn?.querySelector(".text");
+      
+      if (document.body.classList.contains("dark-mode")) {
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Modo Claro";
+      } else {
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Modo Escuro";
+      }
+    }
+
+    // Menu de Acessibilidade
+    function toggleAccessibilityMenu() {
+      const menu = document.getElementById('accessibilityMenu');
+      menu.classList.toggle('active');
+      if (menu.classList.contains('active')) {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    }
+
+    // Controle de tamanho de fonte
+    function changeFontSize(size) {
+      const body = document.body;
+      body.classList.remove('font-small', 'font-medium', 'font-large');
+      body.classList.add('font-' + size);
+      
+      // Atualizar botão ativo
+      document.querySelectorAll('.font-size-controls button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Alto contraste
+    let highContrastEnabled = false;
+    function toggleHighContrast() {
+      highContrastEnabled = !highContrastEnabled;
+      document.body.classList.toggle('high-contrast', highContrastEnabled);
+      
+      const btn = event.target.closest('button');
+      btn.style.background = highContrastEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ========== LEITOR DE TELA ==========
+    let screenReaderEnabled = false;
+    let currentUtterance = null;
+    let isPaused = false;
+
+    function toggleScreenReader() {
+      screenReaderEnabled = !screenReaderEnabled;
+      const btn = event.target.closest('button');
+      const text = document.getElementById('screenReaderText');
+      const controls = document.getElementById('readerControls');
+      
+      if (screenReaderEnabled) {
+        text.textContent = 'Desativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.3)';
+        controls.style.display = 'flex';
+        startReading();
+      } else {
+        text.textContent = 'Ativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+        controls.style.display = 'none';
+        stopReading();
+      }
+    }
+
+    function startReading() {
+      if ('speechSynthesis' in window) {
+        // Pegar todo o conteúdo principal
+        const mainContent = document.querySelector('main');
+        const header = document.querySelector('header');
+        
+        let textToRead = '';
+        
+        // Adicionar título
+        if (header) {
+          const h1 = header.querySelector('h1');
+          const h2 = header.querySelector('h2');
+          if (h1) textToRead += h1.textContent + '. ';
+          if (h2) textToRead += h2.textContent + '. ';
+        }
+        
+        // Adicionar conteúdo principal
+        if (mainContent) {
+          const paragraphs = mainContent.querySelectorAll('p');
+          paragraphs.forEach(p => {
+            if (p.textContent.trim()) {
+              textToRead += p.textContent + '. ';
+            }
+          });
+        }
+        
+        // Criar utterance
+        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'pt-BR';
+        currentUtterance.rate = 0.9; // Velocidade
+        currentUtterance.pitch = 1; // Tom
+        currentUtterance.volume = 1; // Volume
+        
+        // Destacar texto sendo lido
+        let currentIndex = 0;
+        const words = textToRead.split(' ');
+        
+        currentUtterance.onboundary = function(event) {
+          if (event.name === 'word') {
+            highlightCurrentWord(currentIndex, words);
+            currentIndex++;
+          }
+        };
+        
+        currentUtterance.onend = function() {
+          removeHighlight();
+          if (screenReaderEnabled) {
+            document.getElementById('screenReaderText').textContent = 'Leitura Concluída';
+          }
+        };
+        
+        // Iniciar leitura
+        window.speechSynthesis.speak(currentUtterance);
+        
+      } else {
+        alert('Desculpe, seu navegador não suporta síntese de voz.');
+      }
+    }
+
+    function pauseReading() {
+      if (window.speechSynthesis.speaking && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function resumeReading() {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      removeHighlight();
+      isPaused = false;
+    }
+
+    function highlightCurrentWord(index, words) {
+      removeHighlight();
+      const paragraphs = document.querySelectorAll('main p, header h1, header h2');
+      
+      paragraphs.forEach(p => {
+        if (p.textContent.includes(words[index])) {
+          p.classList.add('reading-highlight');
+        }
+      });
+    }
+
+    function removeHighlight() {
+      document.querySelectorAll('.reading-highlight').forEach(el => {
+        el.classList.remove('reading-highlight');
+      });
+    }
+
+    // VLibras
+    let vlibrasEnabled = false;
+    function toggleVLibras() {
+      vlibrasEnabled = !vlibrasEnabled;
+      const widget = document.getElementById('vlibras-widget');
+      widget.style.display = vlibrasEnabled ? 'block' : 'none';
+      
+      const btn = event.target.closest('button');
+      btn.style.background = vlibrasEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('accessibilityMenu');
+      const button = document.querySelector('.accessibility-button');
+      
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+        menu.style.display = 'none';
+      }
+    });
+
+    // Limpar leitura ao sair da página
+    window.addEventListener('beforeunload', function() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1974 - O NASCIMENTO DO TCP/IP E A IDEIA DE UMA INTERNET GLOBAL</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/reciclavel.css">
+</head>
+
+<body>
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <header>
+    <h1>1974 - O NASCIMENTO DO TCP/IP E A IDEIA DE UMA INTERNET GLOBAL</h1>
+    <h2>O ano de 1974 marca o momento em que a internet, como conceito, finalmente ganhou forma.</h2>
+  </header>
+
+  <main>
+    <article class="timeline-card">
+      <img src="./img/iprede.jpg" alt="" class="hero">
+      <div class="content">
+        <h2>📋 Resumo</h2>
+        <p>
+            <h3>Antes disso, existiam redes isoladas, como a ARPANET, que funcionava bem dentro de um círculo restrito de universidades e laboratórios ligados ao Departamento de Defesa dos Estados Unidos.
+               Mas o mundo estava mudando rapidamente. Novos tipos de redes estavam surgindo: redes por rádio, redes por satélite, redes experimentais em diferentes países e redes privadas de corporações.
+               E havia um problema gigantesco: essas redes não conversavam entre si. Eram como cidades isoladas sem estradas, ou ilhas tecnológicas separadas por oceanos de incompatibilidade.</h3>
+        </p>
+
+
+        <br>
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="more-arpanet" id="toggle-arpanet">
+          <h3>Ler mais</h3> <span class="chev">▶</span>
+        </button>
+
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="sources-collapse" id="toggle-sources">
+            <h3>Fontes</h3> <span class="chev">▶</span>
+          </button>
+        </div>
+
+        <div id="more-arpanet" class="wiki-collapse" aria-hidden="true">
+          <div class="inner">
+            <strong><h2>📚 Detalhes</h2></strong>
+
+            <p>
+                <h3>Foi nesse cenário que dois pesquisadores brilhantes, Vinton Cerf e Robert (Bob) Kahn, apresentaram ao mundo a proposta do TCP/IP, um conjunto de protocolos que mudaria para sempre a comunicação humana. Eles publicaram, em maio de 1974, no IEEE Transactions on Communications, o artigo “A Protocol for Packet Network Intercommunication”, que não era apenas um texto técnico, mas um manifesto visionário. Ali estava a resposta para um problema que ninguém tinha resolvido: como interligar redes diferentes de forma que parecessem uma única rede?
+                  Para entender a importância dessa revolução, é preciso voltar alguns anos. 
+                  </h3>
+                  <br>
+
+            <div class="gallery">
+          <img src="./img/BobVint.jpg" alt="Vinton Cerf e Robert (bob) Kahn">
+        </div>
+        <br>
+                  <br>
+                  <h3>Em 1972, Bob Kahn havia demonstrado publicamente a ARPANET na International Computer Communication Conference (ICCC). Foi a primeira vez que muitas pessoas viram computadores de diferentes lugares conversando uns com os outros. Mas a apresentação também deixou claro o limite daquele modelo: a ARPANET era apenas uma rede; fora dela existiam outras redes independentes que funcionavam com tecnologias completamente diferentes. A pergunta que Kahn fazia era simples e poderosa: e se pudéssemos criar um “sistema de redes”, uma rede de redes?
+                  Kahn começou a trabalhar nessa ideia em 1973. Mas rapidamente percebeu que precisaria de alguém com profundo conhecimento de protocolos e estrutura de sistemas. Foi então que chamou Vint Cerf, que estava na Universidade de Stanford e era um dos pesquisadores mais talentosos da área. Os dois formaram uma dupla que, em pouco tempo, seria comparada a Watson & Crick, Shannon & Weaver, e outros pares que revolucionaram áreas inteiras da ciência.
+                 </h3>
+                 <br>
+                 <h3>A ideia fundamental de Cerf e Kahn era a seguinte: para unir redes diferentes, não fazia sentido impor um tipo único de hardware, um único formato de transmissão ou uma única operadora. Isso seria impossível – cada rede tinha suas próprias características, velocidades, tecnologias e limitações. A solução, então, não poderia vir de baixo (do hardware), e sim de cima, através de um esquema universal que funcionasse independente do que estivesse acontecendo na camada física. Em outras palavras, eles precisavam criar uma “linguagem comum” que todo tipo de rede pudesse entender.
+                  <br>
+                  <br>
+                  Essa linguagem seria o TCP/IP.
+                  </h3>
+                  <br>
+                  <div class="gallery">
+          <img src="./img/tcp-ip.gif" alt="TCP/IP">
+        </div>
+        <br>
+                <h3>TCP (Transmission Control Protocol) e IP (Internet Protocol) eram duas partes de um mesmo sistema. O IP definiria como pacotes de dados deveriam ser endereçados, enviados e encaminhados entre redes diferentes. Ele funcionaria como um carteiro universal: não importa de onde o pacote vem, nem para onde vai, ele sabe o caminho. Já o TCP garantiria que a comunicação fosse confiável, cuidando de retransmitir pacotes perdidos, ordenar pacotes que chegassem fora de sequência e assegurar que toda a conversa entre computadores fosse consistente.
+                  </h3>
+                  <br>
+                  <h3>Cerf e Kahn criaram algo radicalmente novo: uma arquitetura aberta, não vinculada a nenhuma empresa, governo ou tecnologia específica. Era o oposto do que empresas de telecomunicações faziam na época. AT&T, por exemplo, acreditava que tudo deveria ser centralizado. Mas o TCP/IP era descentralizado, robusto e democrático. Qualquer rede que implementasse o protocolo poderia se conectar à “rede das redes”. Era uma filosofia de design que refletia, de certo modo, valores acadêmicos e colaborativos: abertura, interoperabilidade, liberdade técnica.
+                  Outro ponto genial foi o conceito de “datagramas” do IP. Ao invés de estabelecer um circuito fixo entre remetente e destinatário (como na telefonia tradicional), o IP simplesmente enviava pacotes soltos pela rede, confiando que eles encontrariam seu destino. Era como se cada pacote fosse um viajante autônomo, capaz de escolher rotas alternativas caso alguma parte da rede estivesse congestionada, quebrada ou fosse destruída. 
+                  </h3>
+                  <br>
+                  <h3>Isso tornava o sistema extremamente resiliente e adaptável – características essenciais num contexto militar de Guerra Fria.
+                  Quando o artigo de 1974 foi publicado, o impacto não foi imediato. A comunidade técnica achou a ideia fascinante, mas muito experimental. O mundo ainda era dominado por grandes empresas de telecomunicações que queriam manter controle total das redes. Porém, nos bastidores, a DARPA reconheceu o potencial revolucionário dos protocolos. Começou então um enorme esforço de testes, implementações e experimentos práticos entre 1975 e 1982. Satélites, rádios e redes terrestres foram conectados experimentalmente, provando que o TCP/IP funcionava até em ambientes imprevisíveis.
+                  </h3>
+                  <br>
+                <h3>Em 1977, um teste lendário foi realizado: um pacote de dados viajou por três redes diferentes — uma rede de rádio, uma rede por satélite e a ARPANET — e chegou ao destino com sucesso. Era a prova viva de que a arquitetura de Cerf e Kahn tinha funcionado. A internet estava pronta para nascer.
+                  A partir daí, tudo se acelerou. Em 1980, o Departamento de Defesa dos EUA determinou que todas as redes militares adotariam o TCP/IP. Em 1º de janeiro de 1983, ocorreu o famoso Flag Day, quando a ARPANET migrou oficialmente de seu protocolo antigo (NCP) para o novo sistema TCP/IP. A partir desse dia, a internet, como estrutura, estava oficialmente inaugurada.
+                  O ano de 1974, portanto, não foi apenas o ano de um artigo científico: foi o ano em que surgiram os princípios que sustentam tudo o que usamos hoje — do Wi-Fi ao 5G, do WhatsApp ao Instagram, de servidores web a videogames online. 
+                  </h3>
+                  <br>
+                  <h3>Sem o TCP/IP, não haveria e-mail, streaming, redes sociais, e-commerce, nuvem ou inteligência artificial distribuída. Foi a descoberta que transformou o mundo.
+                  Culturalmente, esse período marca a abertura de uma nova mentalidade científica e tecnológica. Como o TCP/IP não tinha dono, ele se espalhou naturalmente entre universidades, depois entre empresas, e depois pelo mundo todo. É uma das raras invenções tecnológicas que não nasceu presa a interesses comerciais.</h3>
+                  <br>
+
+                  <div class="gallery">
+          <img src="./img/TCP-IP.webp" alt="TCP/IP">
+        </div>
+<br>
+                  <h3>Filmes e documentários que retratam essa época incluem “The KlineRock Center – The Birth of the Internet” (UCLA), entrevistas com Vint Cerf e Bob Kahn no Computer History Museum, e documentários históricos como “The Machine That Changed the World”. Para quem gosta de leitura, o livro “Where Wizards Stay Up Late”, de Hafner e Lyon, descreve esse capítulo com detalhes deliciosos sobre bastidores.
+                  Assim, 1974 deve ser visto como o ano em que a humanidade ganhou o mapa-mundi da comunicação digital. Antes dele, existiam redes isoladas. Depois dele, existe a possibilidade de unir tudo. O TCP/IP é, até hoje, o coração da internet. Quase meio século depois, a arquitetura criada por Cerf e Kahn continua funcionando, escalando e sustentando bilhões de dispositivos ao redor do planeta.
+                  1974, portanto, não foi o ano em que a internet nasceu fisicamente — mas foi o ano em que ela nasceu como ideia, como arquitetura e como futuro.
+                  </h3>
+            </p>
+
+                <hr>
+
+<p>
+   <h3>CHM (Computer History Museum) – Série de entrevistas com Cerf & Kahn</h3>
+  <a
+    href="https://www.computerhistory.org/"
+    title="https://www.computerhistory.org/">
+    <h3>Documentário: https://www.computerhistory.org/</h3></a>.
+</p>
+
+<p>
+  <h3>The KlineRock Center – The Birth of the Internet</h3>
+ <a
+   href="https://www.google.com/search?q=the+kleinrock+center+%E2%80%93+the+birth+of+the+internet+trailer&sca_esv=9370fbfcff6639a9&biw=1920&bih=953&sxsrf=AE3TifPvfa_GP6I4uBn0VtViSkMKrEgzyg%3A1764694631371&ei=Zxovadq2Ftmp1sQP1sOd0A0&oq=The+KleinRock+Center+%E2%80%93+The+Birth+of+the+Internet+trail&gs_lp=Egxnd3Mtd2l6LXNlcnAiOFRoZSBLbGVpblJvY2sgQ2VudGVyIOKAkyBUaGUgQmlydGggb2YgdGhlIEludGVybmV0IHRyYWlsKgIIADIFECEYoAEyBRAhGKABMgUQIRigAUiOPlD9BljbNnABeAGQAQCYAbABoAHAB6oBAzAuNrgBAcgBAPgBAZgCB6AC3gfCAgoQABiwAxjWBBhHwgIEECEYFZgDAIgGAZAGCJIHAzEuNqAHwRqyBwMwLja4B9gHwgcFMC42LjHIBw4&sclient=gws-wiz-serp#fpstate=ive&vld=cid:f4db4ce7,vid:ziCB9PdMwhw,st:0"
+   title="https://www.google.com/search?q=the+kleinrock+center+%E2%80%93+the+birth+of+the+internet+trailer&sca_esv=9370fbfcff6639a9&biw=1920&bih=953&sxsrf=AE3TifPvfa_GP6I4uBn0VtViSkMKrEgzyg%3A1764694631371&ei=Zxovadq2Ftmp1sQP1sOd0A0&oq=The+KleinRock+Center+%E2%80%93+The+Birth+of+the+Internet+trail&gs_lp=Egxnd3Mtd2l6LXNlcnAiOFRoZSBLbGVpblJvY2sgQ2VudGVyIOKAkyBUaGUgQmlydGggb2YgdGhlIEludGVybmV0IHRyYWlsKgIIADIFECEYoAEyBRAhGKABMgUQIRigAUiOPlD9BljbNnABeAGQAQCYAbABoAHAB6oBAzAuNrgBAcgBAPgBAZgCB6AC3gfCAgoQABiwAxjWBBhHwgIEECEYFZgDAIgGAZAGCJIHAzEuNqAHwRqyBwMwLja4B9gHwgcFMC42LjHIBw4&sclient=gws-wiz-serp#fpstate=ive&vld=cid:f4db4ce7,vid:ziCB9PdMwhw,st:0">
+   <h3>Documentário: https://www.google.com/search?q=the+kleinrock+center+%E2%80%93+the+birth+of+the+internet+trailer&sca</h3></a>.
+</p>
+
+<p>
+  <h3>Where Wizards Stay Up Late</h3>
+ <a
+   href="https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf"
+   title="https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf">
+   <h3>Livro: https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf</h3></a>.
+</p>
+
+          </div>
+        </div>
+
+      </div>
+      <div id="sources-collapse" class="wiki-collapse" aria-hidden="true">
+        <div class="inner">
+          <strong><h2>🔗 Fontes de Pesquisa</h2></strong>
+          <p>
+            
+<h3>Kahn, Robert; Cerf, Vinton — "A Protocol for Packet Network Intercommunication" (1974)<br>
+  Publicação original no IEEE Transactions on Communications, maio de 1974.
+  PDF disponível em repositórios acadêmicos:</h3>
+  <a
+    href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf"
+    title="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">
+    <h3>https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf</h3></a>.
+
+<h3>Computer History Museum — TCP/IP Timeline</h3>
+  <a
+    href="https://www.computerhistory.org/internethistory/"
+    title="https://www.computerhistory.org/internethistory/">
+    <h3>https://www.computerhistory.org/internethistory/</h3></a>.
+
+<h3>RFCs originais (Request for Comments)<br>
+  Repositório oficial da IETF com documentos fundadores do TCP/IP:</h3>
+  <a
+    href="https://www.rfc-editor.org/"
+    title="https://www.rfc-editor.org/">
+    <h3>https://www.rfc-editor.org/</h3></a>.
+
+<h3>Biblioteca do Stanford University — Arquivos de Vinton Cerf</h3>
+  <a
+    href="https://library.stanford.edu/"
+    title="https://library.stanford.edu/">
+    <h3>https://library.stanford.edu/</h3></a>.
+
+<h3>SATNET (rede via satélite) – ARPA História</h3>
+  <a
+    href="https://www.darpa.mil/"
+    title="https://www.darpa.mil/">
+    <h3>https://www.darpa.mil/</h3></a>.
+
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="controls-wide">
+    <button class="btn btn-voltar" onclick="window.history.back()">← Voltar</button>
+    <button class="btn btn-quiz" onclick="window.location.href='quiz1974.html'">🎯 Quiz</button>
+  </div>
+  
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <!-- VLibras (escondido por padrão) -->
+  <div vw class="enabled" id="vlibras-widget" style="display: none;">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Scripts -->
+  <script src="./js/reciclavel.js"></script>
+  
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".btn-toggle");
+      const icon = btn?.querySelector(".icon");
+      const text = btn?.querySelector(".text");
+      
+      if (document.body.classList.contains("dark-mode")) {
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Modo Claro";
+      } else {
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Modo Escuro";
+      }
+    }
+
+    // Menu de Acessibilidade
+    function toggleAccessibilityMenu() {
+      const menu = document.getElementById('accessibilityMenu');
+      menu.classList.toggle('active');
+      if (menu.classList.contains('active')) {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    }
+
+    // Controle de tamanho de fonte
+    function changeFontSize(size) {
+      const body = document.body;
+      body.classList.remove('font-small', 'font-medium', 'font-large');
+      body.classList.add('font-' + size);
+      
+      // Atualizar botão ativo
+      document.querySelectorAll('.font-size-controls button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Alto contraste
+    let highContrastEnabled = false;
+    function toggleHighContrast() {
+      highContrastEnabled = !highContrastEnabled;
+      document.body.classList.toggle('high-contrast', highContrastEnabled);
+      
+      const btn = event.target.closest('button');
+      btn.style.background = highContrastEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ========== LEITOR DE TELA ==========
+    let screenReaderEnabled = false;
+    let currentUtterance = null;
+    let isPaused = false;
+
+    function toggleScreenReader() {
+      screenReaderEnabled = !screenReaderEnabled;
+      const btn = event.target.closest('button');
+      const text = document.getElementById('screenReaderText');
+      const controls = document.getElementById('readerControls');
+      
+      if (screenReaderEnabled) {
+        text.textContent = 'Desativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.3)';
+        controls.style.display = 'flex';
+        startReading();
+      } else {
+        text.textContent = 'Ativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+        controls.style.display = 'none';
+        stopReading();
+      }
+    }
+
+    function startReading() {
+      if ('speechSynthesis' in window) {
+        // Pegar todo o conteúdo principal
+        const mainContent = document.querySelector('main');
+        const header = document.querySelector('header');
+        
+        let textToRead = '';
+        
+        // Adicionar título
+        if (header) {
+          const h1 = header.querySelector('h1');
+          const h2 = header.querySelector('h2');
+          if (h1) textToRead += h1.textContent + '. ';
+          if (h2) textToRead += h2.textContent + '. ';
+        }
+        
+        // Adicionar conteúdo principal
+        if (mainContent) {
+          const paragraphs = mainContent.querySelectorAll('p');
+          paragraphs.forEach(p => {
+            if (p.textContent.trim()) {
+              textToRead += p.textContent + '. ';
+            }
+          });
+        }
+        
+        // Criar utterance
+        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'pt-BR';
+        currentUtterance.rate = 0.9; // Velocidade
+        currentUtterance.pitch = 1; // Tom
+        currentUtterance.volume = 1; // Volume
+        
+        // Destacar texto sendo lido
+        let currentIndex = 0;
+        const words = textToRead.split(' ');
+        
+        currentUtterance.onboundary = function(event) {
+          if (event.name === 'word') {
+            highlightCurrentWord(currentIndex, words);
+            currentIndex++;
+          }
+        };
+        
+        currentUtterance.onend = function() {
+          removeHighlight();
+          if (screenReaderEnabled) {
+            document.getElementById('screenReaderText').textContent = 'Leitura Concluída';
+          }
+        };
+        
+        // Iniciar leitura
+        window.speechSynthesis.speak(currentUtterance);
+        
+      } else {
+        alert('Desculpe, seu navegador não suporta síntese de voz.');
+      }
+    }
+
+    function pauseReading() {
+      if (window.speechSynthesis.speaking && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function resumeReading() {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      removeHighlight();
+      isPaused = false;
+    }
+
+    function highlightCurrentWord(index, words) {
+      removeHighlight();
+      const paragraphs = document.querySelectorAll('main p, header h1, header h2');
+      
+      paragraphs.forEach(p => {
+        if (p.textContent.includes(words[index])) {
+          p.classList.add('reading-highlight');
+        }
+      });
+    }
+
+    function removeHighlight() {
+      document.querySelectorAll('.reading-highlight').forEach(el => {
+        el.classList.remove('reading-highlight');
+      });
+    }
+
+    // VLibras
+    let vlibrasEnabled = false;
+    function toggleVLibras() {
+      vlibrasEnabled = !vlibrasEnabled;
+      const widget = document.getElementById('vlibras-widget');
+      widget.style.display = vlibrasEnabled ? 'block' : 'none';
+      
+      const btn = event.target.closest('button');
+      btn.style.background = vlibrasEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('accessibilityMenu');
+      const button = document.querySelector('.accessibility-button');
+      
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+        menu.style.display = 'none';
+      }
+    });
+
+    // Limpar leitura ao sair da página
+    window.addEventListener('beforeunload', function() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>

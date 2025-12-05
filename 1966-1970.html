@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1966 a 1970 - O NASCIMENTO DA ARPANET E O INÍCIO DA INTERNET</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/reciclavel.css">
+</head>
+
+<body>
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <header>
+    <h1>1966 a 1970 - O NASCIMENTO DA ARPANET E O INÍCIO DA INTERNET</h1>
+    <h2>Se existe um momento na história em que a internet começou realmente a tomar forma, esse momento está entre 1966 e 1970.</h2>
+  </header>
+
+  <main>
+    <article class="timeline-card">
+      <img src="./img/ARPANET.jpg" alt="ARPANET" class="hero">
+      <div class="content">
+        <h2>📋 Resumo</h2>
+        <p>
+            <h3>Foi nesse intervalo que uma ideia ousada, financiada pela recém-criada ARPA dos Estados Unidos, transformou-se em um dos projetos científicos mais revolucionários do século XX: a ARPANET.
+               O que começou como um projeto militar, quase secreto, para garantir comunicações resistentes a ataques durante a Guerra Fria, rapidamente se transformou numa experiência de colaboração científica sem precedentes. Pela primeira vez, computadores espalhados por universidades distantes começaram a formar uma rede, trocando dados em tempo real e inaugurando uma nova era da comunicação humana.
+            </h3>
+        </p>
+
+
+        <br>
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="more-arpanet" id="toggle-arpanet">
+          <h3>Ler mais</h3> <span class="chev">▶</span>
+        </button>
+
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="sources-collapse" id="toggle-sources">
+            <h3>Fontes</h3> <span class="chev">▶</span>
+          </button>
+        </div>
+
+        <div id="more-arpanet" class="wiki-collapse" aria-hidden="true">
+          <div class="inner">
+            <strong><h2>📚 Detalhes</h2></strong>
+
+            <p>
+                <h3>Em 1966, a ARPA decidiu investir seriamente em um projeto que tentasse concretizar uma visão que vinha sendo amadurecida desde o início da década: a ideia de interconectar diferentes computadores de grandes instituições por meio de uma rede que não dependesse de um único centro. A inspiração para isso vinha dos memorandos visionários de J. C. R. Licklider, que imaginava um futuro em que computadores funcionariam em conjunto como um grande sistema interativo de troca de conhecimento. </h3>
+                <br>
+                <h3>Licklider havia plantado essa semente intelectual, mas quem transformou o sonho em engenharia real foi Lawrence G. Roberts.
+                  Roberts, que no ano anterior havia realizado a primeira conexão remota entre dois computadores (o experimento de 1965), foi chamado pela ARPA em 1966 para liderar oficialmente o projeto de construção de uma rede nacional de computadores. Mesmo relutante a ir para Washington no começo, ele acabou aceitando o desafio depois de entender que teria autonomia total, financiamento robusto e acesso aos melhores laboratórios do país.</h3>
+                  <br>
+                  <h3>O objetivo era claro: criar uma rede experimental capaz de conectar centros de pesquisa e permitir que cientistas compartilhassem computadores, programas e dados.
+                  Mas havia um obstáculo colossal: ninguém sabia como construir tal rede. A comutação telefônica tradicional era totalmente inadequada para dados digitais. A transmissão era lenta, o custo era alto, a confiabilidade era baixa e as linhas caíam com frequência. Era como tentar fazer transatlânticos navegarem em um rio raso. Por isso, os engenheiros começaram a se interessar por uma tecnologia que, naquela época, era pouco conhecida fora de círculos acadêmicos: a comutação por pacotes.
+                  </h3>
+                  <br>
+                <h3>Essa ideia, formulada independentemente por três personagens diferentes — Paul Baran (RAND Corporation, EUA), Donald Davies (National Physical Laboratory, Reino Unido) e Leonard Kleinrock (UCLA) — propunha que os dados fossem divididos em pacotes pequenos e enviados de forma independente, encontrando rotas alternativas caso trechos da rede falhassem. Isso tornava comunicação digital eficiente e, mais importante, resistente a interrupções — uma qualidade essencial no contexto da Guerra Fria.
+                  Kleinrock, matemático e pioneiro da teoria de filas, já havia publicado em 1961 uma tese mostrando matematicamente que redes por pacotes poderiam funcionar em grande escala. Seus modelos teóricos se tornariam fundamentais para a ARPANET. Roberts estudou o trabalho de Baran e Davies e percebeu que a comutação por pacotes era exatamente o que a ARPA precisava para concretizar a visão de uma rede descentralizada.
+                  Em 1967, Roberts apresentou publicamente o projeto da ARPANET na conferência ACM em Gatlinburg, Tennessee. 
+                  </h3>
+                  <br>
+
+           <div class="gallery">
+          <img src="./img/lawrenceroberts.jpg" alt="Lawrence G. Roberts">
+        </div>
+        <br>
+
+                  <h3>Sua apresentação causou espanto: a ideia de conectar computadores tão diferentes, de diferentes instituições, usando tecnologia experimental, parecia insana. Muitos duvidavam de que fosse possível. A AT&T, por exemplo, simplesmente recusou a proposta de colaborar no projeto — em suas palavras, “isso nunca funcionará”. Hoje é irônico imaginar que a maior empresa de telecomunicações do mundo recusou participar do nascimento da internet.
+                  Com os planos estabelecidos, a ARPA contratou a empresa BBN Technologies (Bolt, Beranek and Newman), de Boston, para construir os equipamentos essenciais da rede: os Interface Message Processors (IMPs), que funcionariam como os primeiros roteadores da história.</h3>
+                  <br>
+                  <h3>Esses IMPs eram caixas pesadas, com hardware moderno para a época, capazes de receber pacotes, encaminhá-los, verificar erros e se comunicar com o computador local. Cada IMP seria instalado em uma instituição participante, formando os nós da rede.
+                  </h3>
+                  <br>
+
+                    <h3>No final de 1969, os IMPs começaram a ser entregues às primeiras quatro instituições escolhidas para iniciar a ARPANET:</h3>
+                 
+                 <h3> • UCLA (Universidade da Califórnia em Los Angeles) – laboratório do professor Leonard Kleinrock;
+                  <br>
+                  • SRI (Stanford Research Institute), em Menlo Park;
+                  <br>
+                  • UCSB (Universidade da Califórnia em Santa Barbara);
+                  <br>
+                  • University of Utah (Universidade de Utah), que tinha avançados projetos gráficos.</h3>
+            </p>
+
+                <div class="gallery">
+          <img src="./img/primeiroarpanet.jpg" alt="Sistema de redes">
+        </div>
+        <br>
+
+            <p>
+                <h3>A primeira conexão foi estabelecida em 29 de outubro de 1969, quando pesquisadores da UCLA enviaram um comando para o SRI. O objetivo era transmitir a palavra “LOGIN”. Eles digitaram L, enviaram o pacote; depois O; e logo em seguida o sistema caiu e apenas “LO” foi recebido. Essa transmissão falha de duas letras, carregada de simbolismo, é frequentemente lembrada como “o primeiro envio da internet”.</h3>
+                <br>
+                <h3>A partir dali, a ARPANET passou a expandir, conectando mais universidades e laboratórios, criando demanda por padrões, protocolos e novas aplicações. O e-mail, por exemplo, surgiu em 1971, logo após a consolidação da rede.
+                  Entre 1969 e 1970, a ARPANET cresceu rapidamente. Instituições como MIT, Harvard, NASA Ames e o Air Force Cambridge Research Lab aderiram à rede experimental. Os pesquisadores começaram a perceber que compartilhar computadores era mais eficiente que construir máquinas duplicadas para cada projeto. Isso mudou completamente a forma como a ciência era feita: laboratórios distantes podiam colaborar, trocar arquivos, acessar bancos de dados e participar de projetos interconectados. A comunicação entre cientistas ganhou uma velocidade inédita, e universidades se tornaram, pela primeira vez, parte de uma comunidade digital crescente.
+                  A ARPANET também iniciou uma cultura de cooperação que seria fundamental para a internet moderna.</h3>
+                  <br>
+
+                  <div class="gallery">
+          <img src="./img/arpa.jpeg" alt="Sistema de redes">
+        </div>
+        <br>
+
+                  <br>
+                  <h3>Apesar de financiada pelo Departamento de Defesa, a rede era usada principalmente por pesquisadores civis. As discussões técnicas eram abertas, os protocolos eram debatidos coletivamente, e equipes de diferentes estados e universidades trabalhavam juntas por telefone, correio e, eventualmente, pela própria rede. Essa abertura científica fez com que a ARPANET crescesse como uma comunidade colaborativa, não como um projeto militar fechado.
+                  Entre 1966 e 1970, portanto, vemos uma transformação radical: uma ideia teórica se materializou em uma rede operante, jovens pesquisadores tornaram-se pioneiros da engenharia de redes, e universidades se interconectaram pela primeira vez. A ARPANET não era ainda a internet, mas já tinha todos os ingredientes essenciais: descentralização, pacotes, roteamento, interoperabilidade e uma cultura aberta.</h3> 
+                
+                  <br>
+                  <h3>A partir dali, era apenas questão de tempo até que o mundo inteiro fosse conectado.
+                  Esse período também aparece em diversas obras culturais e documentários. O filme “The Social Network” menciona brevemente o MIT e Harvard como herdeiras dessa cultura computacional. O documentário “The Machine That Changed the World” dedica capítulos à ARPANET e aos IMPs, mostrando imagens raras da instalação das máquinas. Para quem deseja visualizar melhor o ambiente universitário da época, o livro “Where Wizards Stay Up Late”, de Hafner e Lyon, é leitura obrigatória. Ele narra com riqueza de detalhes as personalidades envolvidas, os debates técnicos, os improvisos e a atmosfera de descoberta que envolviam os laboratórios da época.
+                  Ao final de 1970, a ARPANET estava consolidada como uma rede funcional. Era pequena, experimental, instável em alguns momentos, mas viva. Era a primeira rede de computadores do mundo. E, sem que os pesquisadores soubessem, aquele projeto universitário financiado pelo Departamento de Defesa acabaria se tornando a espinha dorsal do maior sistema de comunicação que a humanidade já criaria: a internet.
+                  </h3>
+            </p>
+
+                <hr>
+
+<p>
+   <h3>The Social Network</h3>
+  <a
+    href="https://www.google.com/search?q=the+social+network+trailer&sca_esv=9370fbfcff6639a9&sxsrf=AE3TifP96ph7g8ICDd1vRvXLBEVztp9kpg%3A1764693408114&ei=oBUvabjYBuyq1sQPlNPS4Ac&oq=The+Social+Network+t&gs_lp=Egxnd3Mtd2l6LXNlcnAiFFRoZSBTb2NpYWwgTmV0d29yayB0KgIIATIFEAAYgAQyCBAAGIAEGMsBMggQABiABBjLATIIEC4YgAQYywEyCBAAGIAEGMsBMggQABiABBjLATIIEAAYgAQYywEyCBAAGIAEGMsBMggQABiABBjLATIIEAAYgAQYywFIjidQ5RtYsx9wAXgBkAEAmAF7oAH2AaoBAzAuMrgBAcgBAPgBAZgCA6ACiALCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICChAAGIAEGBQYhwLCAgoQLhiABBgUGIcCwgIKEAAYgAQYQxiKBZgDAIgGAZAGE7oGBggBEAEYCZIHAzEuMqAHhhKyBwMwLjK4B4ACwgcDMi0zyAcN&sclient=gws-wiz-serp#fpstate=ive&vld=cid:122c627b,vid:lB95KLmpLR4,st:0"
+    title="https://www.google.com/search?q=the+social+network+trailer&sca_esv=9370fbfcff6639a9&sxsrf=AE3TifP96ph7g8ICDd1vRvXLBEVztp9kpg%3A1764693408114&ei=oBUvabjYBuyq1sQPlNPS4Ac&oq=The+Social+Network+t&gs_lp=Egxnd3Mtd2l6LXNlcnAiFFRoZSBTb2NpYWwgTmV0d29yayB0KgIIATIFEAAYgAQyCBAAGIAEGMsBMggQABiABBjLATIIEC4YgAQYywEyCBAAGIAEGMsBMggQABiABBjLATIIEAAYgAQYywEyCBAAGIAEGMsBMggQABiABBjLATIIEAAYgAQYywFIjidQ5RtYsx9wAXgBkAEAmAF7oAH2AaoBAzAuMrgBAcgBAPgBAZgCA6ACiALCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICChAAGIAEGBQYhwLCAgoQLhiABBgUGIcCwgIKEAAYgAQYQxiKBZgDAIgGAZAGE7oGBggBEAEYCZIHAzEuMqAHhhKyBwMwLjK4B4ACwgcDMi0zyAcN&sclient=gws-wiz-serp#fpstate=ive&vld=cid:122c627b,vid:lB95KLmpLR4,st:0">
+    <h3>Trailer: https://www.google.com/search?q=the+social+network+trailer&sca</h3></a>.
+</p>
+
+<p>
+  <h3>The Machine That Changed the World</h3>
+ <a
+   href="https://www.google.com/search?q=the+machine+that+changed+the+world+documentary&sca_esv=9370fbfcff6639a9&sxsrf=AE3TifMuRj1lDcB53cplkEFQ8iR2rpGAsA%3A1764693564526&ei=PBYvacrtH5_P1sQP64yfmQ8&gs_ssp=eJzj4tLP1TcwyUoxMM4yYPTSK8lIVchNTM7IzEtVKMlILFFIzkjMS09NUQBJlOcX5aQopOQnl-am5pUkFlUCAE7KFO0&oq=The+Machine+That+Changed+the+World+d&gs_lp=Egxnd3Mtd2l6LXNlcnAiJFRoZSBNYWNoaW5lIFRoYXQgQ2hhbmdlZCB0aGUgV29ybGQgZCoCCAAyCBAuGIAEGMsBMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMggQABiABBiiBDIFEAAY7wUyBRAAGO8FMggQABiABBiiBDIFEAAY7wUyFxAuGIAEGMsBGJcFGNwEGN4EGOAE2AEBSMQuUMMTWMomcAF4AZABAJgBkAGgAZwCqgEDMC4yuAEByAEA-AEBmAIEoAKTCsICBxAjGLADGCfCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICDBAjGIAEGBMYJxiKBcICCBAAGIAEGMsBmAMAiAYBkAYTugYGCAEQARgJkgcHMS4yLjYtMaAHphmyBwMwLjK4B6oCwgcFMC4xLjPIBxQ&sclient=gws-wiz-serp#fpstate=ive&vld=cid:7e2d4054,vid:8KnkeON3UEE,st:0"
+   title="https://www.google.com/search?q=the+machine+that+changed+the+world+documentary&sca_esv=9370fbfcff6639a9&sxsrf=AE3TifMuRj1lDcB53cplkEFQ8iR2rpGAsA%3A1764693564526&ei=PBYvacrtH5_P1sQP64yfmQ8&gs_ssp=eJzj4tLP1TcwyUoxMM4yYPTSK8lIVchNTM7IzEtVKMlILFFIzkjMS09NUQBJlOcX5aQopOQnl-am5pUkFlUCAE7KFO0&oq=The+Machine+That+Changed+the+World+d&gs_lp=Egxnd3Mtd2l6LXNlcnAiJFRoZSBNYWNoaW5lIFRoYXQgQ2hhbmdlZCB0aGUgV29ybGQgZCoCCAAyCBAuGIAEGMsBMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMggQABiABBiiBDIFEAAY7wUyBRAAGO8FMggQABiABBiiBDIFEAAY7wUyFxAuGIAEGMsBGJcFGNwEGN4EGOAE2AEBSMQuUMMTWMomcAF4AZABAJgBkAGgAZwCqgEDMC4yuAEByAEA-AEBmAIEoAKTCsICBxAjGLADGCfCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICDBAjGIAEGBMYJxiKBcICCBAAGIAEGMsBmAMAiAYBkAYTugYGCAEQARgJkgcHMS4yLjYtMaAHphmyBwMwLjK4B6oCwgcFMC4xLjPIBxQ&sclient=gws-wiz-serp#fpstate=ive&vld=cid:7e2d4054,vid:8KnkeON3UEE,st:0">
+   <h3>Documentário: https://www.google.com/search?q=the+machine+that+changed+the+world+documentary&sca</h3></a>.
+</p>
+
+<p>
+  <h3>Where Wizards Stay Up Late</h3>
+ <a
+   href="https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf"
+   title="https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf">
+   <h3>Livro: https://monoskop.org/images/e/ee/Hafner_Katie_Lyon_Matthew_Where_Wizards_Stay_Up_Late_The_Origins_Of_The_Internet.pdf</h3></a>.
+</p>
+
+          </div>
+        </div>
+
+      </div>
+      <div id="sources-collapse" class="wiki-collapse" aria-hidden="true">
+        <div class="inner">
+          <strong><h2>🔗 Fontes de Pesquisa</h2></strong>
+          <p>
+            
+<h3>Computer History Museum – História da Internet (1960s)</h3>
+  <a
+    href="https://www.computerhistory.org/internethistory/1960s"
+    title="https://www.computerhistory.org/internethistory/1960s">
+    <h3>https://www.computerhistory.org/internethistory/1960s</h3></a>.
+
+<h3>MIT Lincoln Laboratory – Arquivos sobre Roberts e redes iniciais</h3>
+  <a
+    href="https://www.ll.mit.edu/"
+    title="https://www.ll.mit.edu/">
+    <h3>https://www.ll.mit.edu/</h3></a>.
+
+<h3>Paul Baran – RAND Corporation – “On Distributed Communications” (1964)</h3>
+  <a
+    href="https://www.rand.org/pubs/research_memoranda/RM3420.html"
+    title="https://www.rand.org/pubs/research_memoranda/RM3420.html">
+    <h3>https://www.rand.org/pubs/research_memoranda/RM3420.html</h3></a>.
+
+<h3>Donald Davies – National Physical Laboratory (UK)</h3>
+  <a
+    href="https://www.npl.co.uk/"
+    title="https://www.npl.co.uk/">
+    <h3>https://www.npl.co.uk/</h3></a>.
+
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="controls-wide">
+    <button class="btn btn-voltar" onclick="window.history.back()">← Voltar</button>
+    <button class="btn btn-quiz" onclick="window.location.href='quiz66-70.html'">🎯 Quiz</button>
+  </div>
+  
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <!-- VLibras (escondido por padrão) -->
+  <div vw class="enabled" id="vlibras-widget" style="display: none;">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Scripts -->
+  <script src="./js/reciclavel.js"></script>
+  
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".btn-toggle");
+      const icon = btn?.querySelector(".icon");
+      const text = btn?.querySelector(".text");
+      
+      if (document.body.classList.contains("dark-mode")) {
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Modo Claro";
+      } else {
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Modo Escuro";
+      }
+    }
+
+    // Menu de Acessibilidade
+    function toggleAccessibilityMenu() {
+      const menu = document.getElementById('accessibilityMenu');
+      menu.classList.toggle('active');
+      if (menu.classList.contains('active')) {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    }
+
+    // Controle de tamanho de fonte
+    function changeFontSize(size) {
+      const body = document.body;
+      body.classList.remove('font-small', 'font-medium', 'font-large');
+      body.classList.add('font-' + size);
+      
+      // Atualizar botão ativo
+      document.querySelectorAll('.font-size-controls button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Alto contraste
+    let highContrastEnabled = false;
+    function toggleHighContrast() {
+      highContrastEnabled = !highContrastEnabled;
+      document.body.classList.toggle('high-contrast', highContrastEnabled);
+      
+      const btn = event.target.closest('button');
+      btn.style.background = highContrastEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ========== LEITOR DE TELA ==========
+    let screenReaderEnabled = false;
+    let currentUtterance = null;
+    let isPaused = false;
+
+    function toggleScreenReader() {
+      screenReaderEnabled = !screenReaderEnabled;
+      const btn = event.target.closest('button');
+      const text = document.getElementById('screenReaderText');
+      const controls = document.getElementById('readerControls');
+      
+      if (screenReaderEnabled) {
+        text.textContent = 'Desativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.3)';
+        controls.style.display = 'flex';
+        startReading();
+      } else {
+        text.textContent = 'Ativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+        controls.style.display = 'none';
+        stopReading();
+      }
+    }
+
+    function startReading() {
+      if ('speechSynthesis' in window) {
+        // Pegar todo o conteúdo principal
+        const mainContent = document.querySelector('main');
+        const header = document.querySelector('header');
+        
+        let textToRead = '';
+        
+        // Adicionar título
+        if (header) {
+          const h1 = header.querySelector('h1');
+          const h2 = header.querySelector('h2');
+          if (h1) textToRead += h1.textContent + '. ';
+          if (h2) textToRead += h2.textContent + '. ';
+        }
+        
+        // Adicionar conteúdo principal
+        if (mainContent) {
+          const paragraphs = mainContent.querySelectorAll('p');
+          paragraphs.forEach(p => {
+            if (p.textContent.trim()) {
+              textToRead += p.textContent + '. ';
+            }
+          });
+        }
+        
+        // Criar utterance
+        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'pt-BR';
+        currentUtterance.rate = 0.9; // Velocidade
+        currentUtterance.pitch = 1; // Tom
+        currentUtterance.volume = 1; // Volume
+        
+        // Destacar texto sendo lido
+        let currentIndex = 0;
+        const words = textToRead.split(' ');
+        
+        currentUtterance.onboundary = function(event) {
+          if (event.name === 'word') {
+            highlightCurrentWord(currentIndex, words);
+            currentIndex++;
+          }
+        };
+        
+        currentUtterance.onend = function() {
+          removeHighlight();
+          if (screenReaderEnabled) {
+            document.getElementById('screenReaderText').textContent = 'Leitura Concluída';
+          }
+        };
+        
+        // Iniciar leitura
+        window.speechSynthesis.speak(currentUtterance);
+        
+      } else {
+        alert('Desculpe, seu navegador não suporta síntese de voz.');
+      }
+    }
+
+    function pauseReading() {
+      if (window.speechSynthesis.speaking && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function resumeReading() {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      removeHighlight();
+      isPaused = false;
+    }
+
+    function highlightCurrentWord(index, words) {
+      removeHighlight();
+      const paragraphs = document.querySelectorAll('main p, header h1, header h2');
+      
+      paragraphs.forEach(p => {
+        if (p.textContent.includes(words[index])) {
+          p.classList.add('reading-highlight');
+        }
+      });
+    }
+
+    function removeHighlight() {
+      document.querySelectorAll('.reading-highlight').forEach(el => {
+        el.classList.remove('reading-highlight');
+      });
+    }
+
+    // VLibras
+    let vlibrasEnabled = false;
+    function toggleVLibras() {
+      vlibrasEnabled = !vlibrasEnabled;
+      const widget = document.getElementById('vlibras-widget');
+      widget.style.display = vlibrasEnabled ? 'block' : 'none';
+      
+      const btn = event.target.closest('button');
+      btn.style.background = vlibrasEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('accessibilityMenu');
+      const button = document.querySelector('.accessibility-button');
+      
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+        menu.style.display = 'none';
+      }
+    });
+
+    // Limpar leitura ao sair da página
+    window.addEventListener('beforeunload', function() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>

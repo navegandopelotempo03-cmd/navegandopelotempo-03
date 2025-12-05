@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1958 - O ANO QUE MUDOU O DESTINO DA INTERNET (A CRIAÇÃO DA DARPA)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/reciclavel.css">
+</head>
+
+<body>
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <header>
+    <h1>1958 - O ANO QUE MUDOU O DESTINO DA INTERNET (A CRIAÇÃO DA DARPA)</h1>
+    <h2>Em 1958, o mundo ainda estava digerindo os traumas da Segunda Guerra e aprendendo a viver sob a tensão permanente da Guerra Fria</h2>
+  </header>
+
+  <main>
+    <article class="timeline-card">
+      <img src="./img/1958.png" alt="J. C. R. Licklider" class="hero">
+      <div class="content">
+        <h2>📋 Resumo</h2>
+        <p>
+            <h3> A União Soviética e os Estados Unidos disputavam cada centímetro de avanço científico, tecnológico, político e espacial. Mas naquele ano, um acontecimento específico provocou um abalo profundo nos bastidores do governo americano: o lançamento do Sputnik, o primeiro satélite artificial da história, colocado em órbita pela União Soviética em outubro de 1957.
+               O barulho do “beep-beep” transmitido do espaço foi ouvido como um grito de alerta.
+               Para os Estados Unidos, o Sputnik significava mais do que um feito científico soviético — simbolizava que o inimigo tinha capacidade tecnológica para lançar mísseis balísticos intercontinentais, e que os EUA estavam perdendo a corrida pela supremacia científica.</h3>
+        </p>
+
+
+        <br>
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="more-arpanet" id="toggle-arpanet">
+          <h3>Ler mais</h3> <span class="chev">▶</span>
+        </button>
+
+        <button class="wiki-toggle" aria-expanded="false" aria-controls="sources-collapse" id="toggle-sources">
+            <h3>Fontes</h3> <span class="chev">▶</span>
+          </button>
+        </div>
+
+        <div id="more-arpanet" class="wiki-collapse" aria-hidden="true">
+          <div class="inner">
+            <strong><h2>📚 Detalhes</h2></strong>
+
+            <p>
+                <h3>O impacto psicológico e político foi tão forte que muitos historiadores comparam o efeito do Sputnik ao ataque de Pearl Harbor. A sensação nos EUA era de vulnerabilidade e atraso. Em discursos públicos, jornais e conversas internas, crescia o temor de que a União Soviética avançasse primeiro em tecnologias de criptografia, computadores, radares, defesa aérea e principalmente sistemas espaciais capazes de alterar o equilíbrio estratégico mundial. Era preciso reagir rápido — e reagir de forma radical.
+                  </h3>
+
+                  <div class="gallery">
+                    <img src="./img/guerrafria.webp" alt="Guerra Fria">
+                  </div>
+          
+                  <br>
+                  <h3>Foi nesse clima de emergência científica que nasceu a ARPA, mais tarde conhecida como DARPA (Defense Advanced Research Projects Agency). Criada oficialmente em 1958 pelo presidente Dwight D. Eisenhower, a agência tinha um mandato simples e extremamente amplo: impedir que os Estados Unidos fossem surpreendidos novamente por uma inovação tecnológica inimiga. A ARPA não era uma agência comum. Enquanto outras instituições do governo tinham burocracias pesadas e processos lentos, a ARPA foi desenhada para ser o oposto disso: rápida, experimental, ousada, aberta a ideias arriscadas e capaz de financiar projetos que nenhum setor privado se atreveria a bancar.
+                  Em certa medida, a ARPA foi criada para pensar o “impossível”. Sua função era apoiar pesquisas visionárias que pudessem garantir a superioridade tecnológica americana por décadas. Não importava que um projeto fosse incerto, caro ou estranho — se tivesse potencial de revolucionar o futuro, a ARPA podia investir. Essa filosofia de risco calculado, somada ao clima tenso da Guerra Fria, abriu espaço para ideias extremamente avançadas, incluindo computadores interconectados, sistemas distribuídos, inteligência artificial e até projetos espaciais experimentais.
+                  </h3>
+
+                  <div class="gallery">
+                    <img src="./img/logoARPADARPA.png" alt="Logo da ARPA futuramente virando DARPA">
+                  </div>
+        <br>
+
+          <h3>Ao longo de 1958 e início da década de 1960, a ARPA organizou grupos de pesquisa em universidades como MIT, Stanford e UCLA para trabalharem em temas considerados estratégicos. O que pouca gente sabe é que, nesse período inicial, a ARPA não estava interessada em “internet”, porque o conceito ainda nem existia. O que ela queria era algo muito mais simples e ao mesmo tempo muito mais ambicioso: um sistema de comunicação capaz de continuar funcionando mesmo que partes dele fossem destruídas em um ataque nuclear. O medo de uma guerra atômica influenciava cada decisão. O Pentágono temia que, em um cenário de guerra, suas linhas telefônicas, antenas ou centrais de comando fossem destruídas. Era preciso imaginar uma rede de comunicação que não dependesse de um único ponto central.
+            O problema era que nos anos 1950 todas as redes eram centralizadas. Telefones dependiam de centrais físicas; computadores não conversavam entre si; dados eram transportados em fitas e cartões perfurados; e não existia nenhuma forma eficiente de comunicação digital distribuída. A ideia de conectar diversas máquinas espalhadas pelo país, permitindo que os dados encontrassem rotas alternativas caso algum caminho fosse destruído, parecia quase ficção científica. Mas exatamente por parecer impossível é que a ARPA se interessou.
+            Com orçamento praticamente ilimitado, autonomia e liberdade acadêmica, a ARPA começou a financiar estudos sobre sistemas computacionais distribuídos. 
+            </h3>
+            <br>
+
+            <h3>Pesquisadores como J. C. R. Licklider, um psicólogo e cientista da computação do MIT, começaram a elaborar visões ousadas sobre “bibliotecas intergalácticas” de computadores e comunicação digital interativa. Suas ideias, escritas em memorandos internos no começo dos anos 1960, foram essenciais para convencer a ARPA de que computadores poderiam ser mais do que máquinas isoladas; poderiam formar redes inteligentes.
+            </h3>
+
+            <div class="gallery">
+              <img src="./img/Licklider.jpg" alt="J. C. R. Licklider">
+            </div>
+            <br>
+            
+            <h3>Mesmo que a ARPA tenha se tornado famosa nas décadas seguintes por criar a ARPANET, seu papel inicial nos anos 1950 foi muito mais amplo: ela reorganizou a ciência americana. Instituiu uma nova forma de fazer pesquisa — descentralizada, interdisciplinar, financiada rapidamente e com metas de longo prazo. Foi graças à ARPA que universidades tiveram recursos para construir laboratórios de protótipos, contratar pesquisadores e avançar em temas como computação interativa, processamento de sinais, engenharia de software, sistemas de defesa e comunicação digital.
+          </h3>
+          <br>
+        
+                <h3>Um fato interessante é que a cultura da ARPA era completamente diferente da cultura militar tradicional. Pesquisadores trabalhavam com enorme liberdade, não usavam uniformes, tinham acesso direto a decisores e podiam propor ideias sem medo de rejeição. Essa estrutura informal fez com que jovens cientistas extremamente criativos tivessem espaço para propor soluções radicais. A ARPA funcionava como um “laboratório nacional invisível”: espalhado pelo país, sem prédios próprios, mas com enorme influência.
+                  Em termos culturais, podemos perceber que essa época até hoje alimenta obras de ficção científica. O medo nuclear, a corrida espacial, a espionagem e a tecnologia emergente moldaram imaginários que aparecem em filmes como “Dr. Fantástico” (1964), “Ponte dos Espiões” (2015) e nas histórias de ficção científica de Isaac Asimov e Arthur C. Clarke. Para quem quer ver a atmosfera científica e militar desse período, o documentário “Cold War Tech Race” da PBS é uma excelente visão geral do clima de paranoia e inovação científica.
+                  A criação da ARPA em 1958 não gerou a internet imediatamente, mas criou as condições necessárias para que ela surgisse anos depois. Sem ela, seria impossível financiar o tipo de pesquisa que criou a ARPANET. Sem ela, pesquisadores como Licklider, Lawrence Roberts e Vint Cerf jamais teriam as equipes e o suporte para experimentar redes de computadores. Sem ela, não haveria os IMPs, o packet switching, o TCP/IP e a filosofia de descentralização que guia a internet até hoje.
+                  Assim, 1958 se torna um marco essencial porque representa o momento em que o governo americano percebeu que o futuro seria decidido pela tecnologia da informação. A internet, quando finalmente nascesse, seria filha desse ambiente de medo geopolítico, imaginação científica e investimento estratégico. A DARPA não só financiou a criação da primeira rede de computadores da história — ela inventou a cultura de inovação que moldou todo o século XXI.
+                  </h3>
+                  <br>
+
+                <hr>
+
+<p>
+   <h3>Documentário da PBS – “Cold War Tech Race”</h3>
+  <a
+    href="https://www.pbs.org/"
+    title="https://www.pbs.org/">
+    <h3>PBS: https://www.pbs.org/</h3></a>.
+</p>
+<h3>Museu Nacional do Ar e do Espaço Smithsonian – Materiais de arquivo sobre tecnologia da Guerra Fria</h3>
+  <a
+    href="https://airandspace.si.edu/collection-archive"
+    title="https://airandspace.si.edu/collection-archive">
+    <h3>Materiais: https://airandspace.si.edu/collection-archive</h3></a>.
+</p>
+<h3>Arquivos Nacionais dos EUA – Coleções de Defesa da Guerra Fria</h3>
+  <a
+    href="https://www.archives.gov/research/foreign-policy/cold-war"
+    title="https://www.archives.gov/research/foreign-policy/cold-war">
+    <h3>Arquivos: https://www.archives.gov/research/foreign-policy/cold-war</h3></a>.
+</p>
+
+          </div>
+        </div>
+
+      </div>
+      <div id="sources-collapse" class="wiki-collapse" aria-hidden="true">
+        <div class="inner">
+          <strong><h2>🔗 Fontes de Pesquisa</h2></strong>
+          <p>
+            
+<h3>DARPA – “A Short History of DARPA” (histórico institucional oficial)</h3>
+  <a
+    href="https://www.darpa.mil/about-us/darpa-history"
+    title="https://www.darpa.mil/about-us/darpa-history">
+    <h3>https://www.darpa.mil/about-us/darpa-history</h3></a>.
+
+<h3>DARPA – “DARPA Timeline”</h3>
+  <a
+    href="https://www.darpa.mil/about-us/timeline"
+    title="https://www.darpa.mil/about-us/timeline">
+    <h3>https://www.darpa.mil/about-us/timeline</h3></a>.
+
+<h3>U.S. Department of Defense – “The Sputnik Crisis and Creation of ARPA”</h3>
+  <a
+    href="https://history.defense.gov/Historical-Sources/Education/Tutorials/ARPA/"
+    title="https://history.defense.gov/Historical-Sources/Education/Tutorials/ARPA/">
+    <h3>https://history.defense.gov/Historical-Sources/Education/Tutorials/ARPA/</h3></a>.
+
+<h3>NASA – Historical Overview of the Sputnik Shock</h3>
+  <a
+    href="https://history.nasa.gov/sputnik/"
+    title="https://history.nasa.gov/sputnik/">
+    <h3>https://history.nasa.gov/sputnik/</h3></a>.
+
+<h3>National Security Archive – Cold War Digital History Collections</h3>
+  <a
+    href="https://nsarchive.gwu.edu"
+    title="https://nsarchive.gwu.edu">
+    <h3>https://nsarchive.gwu.edu</h3></a>.
+
+<h3>PBS – “Sputnik Declassified”</h3>
+  <a
+    href="https://www.pbs.org/wgbh/nova/sputnik/"
+    title="https://www.pbs.org/wgbh/nova/sputnik/">
+    <h3>https://www.pbs.org/wgbh/nova/sputnik/</h3></a>.
+
+
+
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="controls-wide">
+    <button class="btn btn-voltar" onclick="window.history.back()">← Voltar</button>
+    <button class="btn btn-quiz" onclick="window.location.href='quiz1958.html'">🎯 Quiz</button>
+  </div>
+  
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <!-- VLibras (escondido por padrão) -->
+  <div vw class="enabled" id="vlibras-widget" style="display: none;">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Scripts -->
+  <script src="./js/reciclavel.js"></script>
+  
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".btn-toggle");
+      const icon = btn?.querySelector(".icon");
+      const text = btn?.querySelector(".text");
+      
+      if (document.body.classList.contains("dark-mode")) {
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Modo Claro";
+      } else {
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Modo Escuro";
+      }
+    }
+
+    // Menu de Acessibilidade
+    function toggleAccessibilityMenu() {
+      const menu = document.getElementById('accessibilityMenu');
+      menu.classList.toggle('active');
+      if (menu.classList.contains('active')) {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    }
+
+    // Controle de tamanho de fonte
+    function changeFontSize(size) {
+      const body = document.body;
+      body.classList.remove('font-small', 'font-medium', 'font-large');
+      body.classList.add('font-' + size);
+      
+      // Atualizar botão ativo
+      document.querySelectorAll('.font-size-controls button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Alto contraste
+    let highContrastEnabled = false;
+    function toggleHighContrast() {
+      highContrastEnabled = !highContrastEnabled;
+      document.body.classList.toggle('high-contrast', highContrastEnabled);
+      
+      const btn = event.target.closest('button');
+      btn.style.background = highContrastEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ========== LEITOR DE TELA ==========
+    let screenReaderEnabled = false;
+    let currentUtterance = null;
+    let isPaused = false;
+
+    function toggleScreenReader() {
+      screenReaderEnabled = !screenReaderEnabled;
+      const btn = event.target.closest('button');
+      const text = document.getElementById('screenReaderText');
+      const controls = document.getElementById('readerControls');
+      
+      if (screenReaderEnabled) {
+        text.textContent = 'Desativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.3)';
+        controls.style.display = 'flex';
+        startReading();
+      } else {
+        text.textContent = 'Ativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+        controls.style.display = 'none';
+        stopReading();
+      }
+    }
+
+    function startReading() {
+      if ('speechSynthesis' in window) {
+        // Pegar todo o conteúdo principal
+        const mainContent = document.querySelector('main');
+        const header = document.querySelector('header');
+        
+        let textToRead = '';
+        
+        // Adicionar título
+        if (header) {
+          const h1 = header.querySelector('h1');
+          const h2 = header.querySelector('h2');
+          if (h1) textToRead += h1.textContent + '. ';
+          if (h2) textToRead += h2.textContent + '. ';
+        }
+        
+        // Adicionar conteúdo principal
+        if (mainContent) {
+          const paragraphs = mainContent.querySelectorAll('p');
+          paragraphs.forEach(p => {
+            if (p.textContent.trim()) {
+              textToRead += p.textContent + '. ';
+            }
+          });
+        }
+        
+        // Criar utterance
+        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'pt-BR';
+        currentUtterance.rate = 0.9; // Velocidade
+        currentUtterance.pitch = 1; // Tom
+        currentUtterance.volume = 1; // Volume
+        
+        // Destacar texto sendo lido
+        let currentIndex = 0;
+        const words = textToRead.split(' ');
+        
+        currentUtterance.onboundary = function(event) {
+          if (event.name === 'word') {
+            highlightCurrentWord(currentIndex, words);
+            currentIndex++;
+          }
+        };
+        
+        currentUtterance.onend = function() {
+          removeHighlight();
+          if (screenReaderEnabled) {
+            document.getElementById('screenReaderText').textContent = 'Leitura Concluída';
+          }
+        };
+        
+        // Iniciar leitura
+        window.speechSynthesis.speak(currentUtterance);
+        
+      } else {
+        alert('Desculpe, seu navegador não suporta síntese de voz.');
+      }
+    }
+
+    function pauseReading() {
+      if (window.speechSynthesis.speaking && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function resumeReading() {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+        document.getElementById('pauseBtn').textContent = '⏸️';
+      }
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      removeHighlight();
+      isPaused = false;
+    }
+
+    function highlightCurrentWord(index, words) {
+      removeHighlight();
+      const paragraphs = document.querySelectorAll('main p, header h1, header h2');
+      
+      paragraphs.forEach(p => {
+        if (p.textContent.includes(words[index])) {
+          p.classList.add('reading-highlight');
+        }
+      });
+    }
+
+    function removeHighlight() {
+      document.querySelectorAll('.reading-highlight').forEach(el => {
+        el.classList.remove('reading-highlight');
+      });
+    }
+
+    // VLibras
+    let vlibrasEnabled = false;
+    function toggleVLibras() {
+      vlibrasEnabled = !vlibrasEnabled;
+      const widget = document.getElementById('vlibras-widget');
+      widget.style.display = vlibrasEnabled ? 'block' : 'none';
+      
+      const btn = event.target.closest('button');
+      btn.style.background = vlibrasEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('accessibilityMenu');
+      const button = document.querySelector('.accessibility-button');
+      
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+        menu.style.display = 'none';
+      }
+    });
+
+    // Limpar leitura ao sair da página
+    window.addEventListener('beforeunload', function() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>
