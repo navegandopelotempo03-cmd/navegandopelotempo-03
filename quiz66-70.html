@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 1966 | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "Em 1965, qual foi a principal conquista do experimento de Roberts e Merrill?",
+        "opcoes": ["Criar o primeiro e-mail da história", 
+        "Desenvolver o primeiro computador de tempo compartilhado", 
+        "Conectar dois computadores distantes pela primeira vez", 
+        "Criar o primeiro protocolo de rede padronizado"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual era o principal problema da comutação telefônica tradicional identificado por Roberts?",
+        "opcoes": ["A ligação exigia um canal fixo, sendo ineficiente para dados digitais", 
+        "O sinal era totalmente incompatível com máquinas militares", 
+        "Era impossível transmitir qualquer dado pela linha telefônica", 
+        "Não permitia comunicação por voz e dados ao mesmo tempo"],
+        "correta": 0
+      },
+      {
+        "pergunta": "O experimento de 1965 é considerado o quê na história da internet?",
+        "opcoes": ["O surgimento oficial da ARPANET",
+          "A primeira WAN (rede de longa distância)",
+          "A criação do primeiro roteador moderno",
+          "A origem dos cabos de fibra óptica"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quem foi o pesquisador que liderou o desenvolvimento da ARPANET a partir de 1966?",
+        "opcoes": ["Paul Baran", 
+        "Donald Davies", 
+        "Lawrence G. Roberts", 
+        "Leonard Kleinrock"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual tecnologia se tornou essencial para possibilitar a ARPANET?",
+        "opcoes": ["Comutação por circuito", 
+        "Criptografia pública", 
+        "Comutação por pacotes", 
+        "Cabos coaxiais submarinos"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual era o objetivo inicial da ARPANET ao ser criada?",
+        "opcoes": ["Conectar computadores domésticos",
+          "Criar uma rede resistente a falhas e ataques durante a Guerra Fria",
+          "Desenvolver redes sociais universitárias",
+          "Criar uma internet comercial para empresas"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quais foram as quatro primeiras instituições conectadas à ARPANET em 1969?",
+        "opcoes": ["MIT, Harvard, NASA Ames e RAND Corporation",
+          "UCLA, SRI, UCSB e University of Utah",
+          "MIT, UCLA, Harvard e IBM Research",
+          "SRI, Berkeley, Princeton e Caltech"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual foi a primeira “mensagem” enviada na ARPANET em 29 de outubro de 1969?",
+        "opcoes": ["HELLO", 
+        "LOGIN (palavra completa)", 
+        "LO (por causa da queda do sistema)", 
+        "START"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Quem construiu os IMPs, os primeiros roteadores da ARPANET?",
+        "opcoes": ["AT&T", 
+        "BBN Technologies", 
+        "IBM", 
+        "Bell Labs"],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que a ARPANET trouxe de novo para a comunidade científica?",
+        "opcoes": ["Substituiu totalmente as cartas e telefonemas",
+          "Permitiu acesso à internet comercial global",
+          "Criou uma cultura de colaboração entre universidades conectadas",
+          "Tornou todos os computadores compatíveis automaticamente"],
+        "correta": 2
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>🌐 Quiz - 1966 a 1970: O NASCIMENTO DA ARPANET E O INÍCIO DA INTERNET</h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong></h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

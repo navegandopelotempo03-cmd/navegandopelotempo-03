@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 1995 | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "O que torna 1995 um marco histórico para a internet?",
+        "opcoes": ["Foi o ano em que o Mosaic foi lançado", 
+        "A internet deixou de ser acadêmica/militar e tornou-se comercial e popular", 
+        "Surgiram as primeiras redes sociais modernas", 
+        "O Google foi fundado"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual navegador dominou o mercado em 1995, chegando a mais de 80% de uso?",
+        "opcoes": ["Internet Explorer", 
+        "Netscape Navigator", 
+        "Mosaic 2.0", 
+        "Opera"],
+        "correta": 1
+      },
+      {
+        "pergunta": "A desativação da NSFNET em 1995 permitiu que:",
+        "opcoes": ["Apenas empresas pudessem usar a internet",
+          "O governo dos EUA proibisse o acesso doméstico",
+          "Provedores privados assumissem a infraestrutura e vendessem acesso ao público",
+          "A internet se tornasse exclusiva de universidades"],
+        "correta": 2
+      },
+      {
+        "pergunta": "O IPO da Netscape em 1995 é lembrado porque:",
+        "opcoes": ["Foi o primeiro IPO de tecnologia da história", 
+        "Tornou o Navigator gratuito para todos", 
+        "Iniciou a era “.com” e antecipou a bolha da internet", 
+        "Financiou a criação do Google"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual empresa lançou seu site oficialmente em 1995 como uma simples livraria virtual?",
+        "opcoes": ["eBay", 
+        "Amazon", 
+        "Yahoo!", 
+        "IBM"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual serviço criado em 1995 introduziu o conceito de marketplace entre usuários comuns?",
+        "opcoes": ["GeoCities",
+          "AltaVista",
+          "eBay",
+          "Napster"],
+        "correta": 2
+      },
+      {
+        "pergunta": "O Yahoo!, surgido em 1995, era conhecido principalmente como:",
+        "opcoes": ["Um grande portal e índice de sites da Web",
+          "Um navegador concorrente do Netscape",
+          "Uma rede social pioneira",
+          "O primeiro mecanismo de busca inteligente"],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual tecnologia lançada em 1995 prometia rodar em qualquer máquina e abriu caminho para aplicações Web dinâmicas?",
+        "opcoes": ["Flash", 
+        "MySQL", 
+        "Python", 
+        "Java"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Que linguagem começou a surgir no período e permitiu tornar sites mais interativos?",
+        "opcoes": ["C#", 
+        "Ruby", 
+        "Swift", 
+        "PHP"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Culturalmente, o que o acesso doméstico à internet representava em 1995?",
+        "opcoes": ["Um risco tecnológico que assustava consumidores",
+          "Uma moda passageira",
+          "Um símbolo de modernidade e a chegada do “futuro” às casas",
+          "Um recurso obrigatório exigido pelo governo"],
+        "correta": 2
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>💼 Quiz - 1995: </h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong></h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

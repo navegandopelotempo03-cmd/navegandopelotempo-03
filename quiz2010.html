@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 2010 | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "O que caracteriza 2010 como um ano de virada na internet?",
+        "opcoes": ["A criação dos primeiros browsers gráficos", 
+        "A invenção dos blogs pessoais", 
+        "O surgimento da internet discada global", 
+        "A consolidação da Web social e o início do mobile-first"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Qual plataforma lançada em 2010 se tornou um dos maiores fenômenos da década?",
+        "opcoes": ["TikTok", 
+        "Snapchat", 
+        "Pinterest", 
+        "Instagram"],
+        "correta": 3
+      },
+      {
+        "pergunta": "O Instagram surgiu inicialmente como…",
+        "opcoes": ["Um app exclusivo para iPhone focado em fotos rápidas com filtros",
+          "Uma rede social baseada em textos longos",
+          "Uma plataforma de vídeos longos",
+          "Um aplicativo de mensagens instantâneas"],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que simboliza a mudança cultural trazida pelo Instagram em 2010?",
+        "opcoes": ["O fim do compartilhamento de fotos nas redes", 
+        "A transição da internet baseada em texto para a internet baseada em imagens", 
+        "A volta do uso de blogs pessoais", 
+        "A priorização de áudios em vez de imagens"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Em 2010, o Facebook…",
+        "opcoes": ["Foi lançado oficialmente pela primeira vez", 
+        "Ultrapassou 500 milhões de usuários e tornou-se a maior rede social do mundo", 
+        "Começou a perder usuários para o MySpace", 
+        "Funcionava apenas por convites"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual fenômeno começa a se consolidar em 2010 por meio do YouTube?",
+        "opcoes": ["Exclusividade de vídeos de grandes estúdios",
+          "Conteúdos apenas corporativos e jornalísticos",
+          "Restrição de uploads para usuários comuns",
+          "Era dos creators e dos youtubers profissionais"],
+        "correta": 3
+      },
+      {
+        "pergunta": "O que marca 2010 como ponto de virada no consumo de mídia?",
+        "opcoes": ["A volta dos DVDs e Blu-rays",
+          "A ascensão do streaming como modelo dominante",
+          "A extinção total do cinema",
+          "O fim da música digital"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Em 2010, o Spotify e o modelo de música em streaming…",
+        "opcoes": ["Começam a mostrar que a era dos downloads estava acabando", 
+        "Substituem completamente as rádios FM", 
+        "Eliminam a pirataria imediatamente", 
+        "Surge apenas como ferramenta para podcasts"],
+        "correta": 0
+      },
+      {
+        "pergunta": "O WhatsApp se popularizou em 2010 principalmente por causa…",
+        "opcoes": ["De sua função de publicar vídeos longos", 
+        "Do uso exclusivo para empresas", 
+        "Da adoção rápida pelos usuários de iPhone e Android", 
+        "De ser um app financeiro"],
+        "correta": 2
+      },
+      {
+        "pergunta": "O que define o design mobile-first, tendência que se consolida em 2010?",
+        "opcoes": ["Criar sites pensando primeiro no smartphone",
+          "Adaptar apenas redes sociais para desktop",
+          "Priorizar páginas enormes e pesadas",
+          "Criar sites apenas para computadores"],
+        "correta": 0
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>🎬 Quiz - 2010: </h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong></h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

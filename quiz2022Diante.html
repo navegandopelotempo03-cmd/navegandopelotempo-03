@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 2022 em diante | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "O que marca o início da era pós-2022 na internet?",
+        "opcoes": ["A ascensão da IA generativa como motor central da vida digital.", 
+        "O abandono da internet pelas grandes empresas.", 
+        "A extinção completa das redes sociais.", 
+        "A proibição global de algoritmos."],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual tecnologia se tornou fenômeno global após novembro de 2022?",
+        "opcoes": ["O fim do aprendizado de máquina.", 
+        "A volta do Orkut como principal rede social do mundo.", 
+        "O surgimento das primeiras televisões inteligentes.", 
+        "ChatGPT, impulsionando o avanço da IA generativa."],
+        "correta": 3
+      },
+      {
+        "pergunta": "O que tornou modelos como GPT-4 e GPT-3.5 tão revolucionários?",
+        "opcoes": ["A função exclusiva de criar memes em vídeo.",
+          "A capacidade de substituir totalmente o Google.",
+          "A capacidade de conversar, escrever textos, gerar código e executar tarefas complexas.",
+          "Um design feito apenas para jogar videogame."],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual setor enfrentou forte debate ético por causa da IA generativa?",
+        "opcoes": ["A engenharia naval.", 
+        "Artes e criação visual, devido ao uso de acervos de artistas no treinamento de IA.", 
+        "A agricultura orgânica.", 
+        "O transporte ferroviário."],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que aconteceu com redes sociais tradicionais como o Facebook após 2022?",
+        "opcoes": ["Enfrentaram crise de relevância, perda de jovens e desgaste público.", 
+        "Atingiram sua máxima popularidade e dominaram toda a cultura digital.", 
+        "Passaram a ser usadas apenas para aulas acadêmicas.", 
+        "Foram proibidas globalmente por falta de usuários."],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que marcou a crise do Twitter após sua compra por Elon Musk?",
+        "opcoes": ["Demissões, queda de moderação, caos algorítmico e aumento da desinformação.",
+          "Estagnação total sem nenhuma mudança.",
+          "Crescimento recorde e estabilidade absoluta.",
+          "Transformação em uma plataforma exclusivamente educativa."],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual plataforma dominou culturalmente com o formato de vídeos curtos?",
+        "opcoes": ["Pinterest",
+          "Tumblr",
+          "LinkedIn",
+          "TikTok"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Qual evento global intensificou a guerra cibernética a partir de 2022?",
+        "opcoes": ["A criação do metaverso pela Meta.", 
+        "A invasão da Ucrânia pela Rússia.", 
+        "O lançamento do Windows 12.", 
+        "A proibição dos smartphones dobráveis."],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que caracterizou a economia dos criadores (creators economy) após 2022?",
+        "opcoes": ["Desaparecimento completo de influenciadores digitais.", 
+        "Rejeição global ao consumo de conteúdo online.", 
+        "Criação de leis proibindo vídeos curtos.", 
+        "Consolidação de plataformas como YouTube, Twitch, TikTok e OnlyFans como fontes reais de renda."],
+        "correta": 3
+      },
+      {
+        "pergunta": "O que representam leis como DSA e DMA na União Europeia?",
+        "opcoes": ["A liberação total do uso irrestrito de dados pessoais.",
+          "A obrigatoriedade de usar apenas redes sociais europeias.",
+          "A extinção das empresas de tecnologia no continente.",
+          "Tentativas de regular big techs, algoritmos, publicidade direcionada e abusos de dados."],
+        "correta": 3
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>🤖 Quiz - 2022 em diante: </h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong></h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

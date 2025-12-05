@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Final 90s | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "Qual tecnologia simbolizou o início da comunicação instantânea global no final dos anos 90?",
+        "opcoes": ["Bate-papo da Globo.com", 
+        "Netscape Navigator", 
+        "ICQ", 
+        "Orkut"],
+        "correta": 2
+      },
+      {
+        "pergunta": "O que tornava o ICQ revolucionário para a época?",
+        "opcoes": ["Permitia chamadas de vídeo em HD", 
+        "Funcionava apenas offline", 
+        "Criou lista de contatos, status, notificações e mensagens instantâneas", 
+        "Era integrado diretamente a portais como UOL"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual comunicador lançado em 1999 se tornou o principal do mundo nos anos seguintes?",
+        "opcoes": ["MSN Messenger",
+          "Skype",
+          "AOL Messenger",
+          "Yahoo! Pager"],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que caracterizava os sites pessoais do final dos anos 90?",
+        "opcoes": ["Páginas minimalistas obrigatórias", 
+        "Apenas empresas podiam criar sites", 
+        "Eram todos pagos e controlados por portais", 
+        "GIFs, fundos coloridos, música automática e personalização livre"],
+        "correta": 3 
+      },
+      {
+        "pergunta": "Qual portal ganhou enorme destaque na época como “porta de entrada” da internet no Brasil?",
+        "opcoes": ["Lycos", 
+        "UOL", 
+        "Terra (que surgiria depois)", 
+        "BOL Messenger"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Antes do Google dominar, qual buscador era considerado um dos mais avançados?",
+        "opcoes": ["Yahoo! Directory",
+          "Bing",
+          "AltaVista",
+          "DuckDuckGo"],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual inovação principal fez o Google se destacar ao ser lançado em 1998?",
+        "opcoes": ["Ser o primeiro buscador com propagandas",
+          "Introduzir o PageRank, que classificava páginas por relevância",
+          "Distribuir CDs gratuitos como a AOL",
+          "Criar sites automaticamente para os usuários"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual fenômeno social marcou milhões de brasileiros no fim dos anos 90?",
+        "opcoes": ["Videoconferências em sala de aula", 
+        "Salas de bate-papo como UOL Chat e Bate-Papo Globo.com", 
+        "Streaming de música em alta qualidade", 
+        "Redes sociais sofisticadas como Facebook"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Filmes como Matrix e Hackers influenciaram que movimento cultural?",
+        "opcoes": ["A cultura hacker e o imaginário cyberpunk", 
+        "A popularização de cursos de design gráfico", 
+        "O surgimento do e-commerce", 
+        "A regulamentação rígida da internet"],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que caracterizou a economia digital no final dos anos 90?",
+        "opcoes": ["Forte regulamentação governamental que desacelerou startups",
+          "Criação de poucos serviços online e pouco investimento",
+          "Explosão das empresas ponto-com, levando à bolha de 2000",
+          "Apenas empresas tradicionais dominavam o mercado digital"],
+        "correta": 2
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>💬 Quiz - : Final dos anos 90</h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong></h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

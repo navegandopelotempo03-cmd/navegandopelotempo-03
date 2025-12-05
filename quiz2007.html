@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 2007 | Museu Interativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/quizreciclavel.css">
+</head>
+
+<body>
+
+  <!-- ========== DADOS DO QUIZ ========== -->
+  <script id="quiz-data" type="application/json">
+  {
+    "questoes": [
+      {
+        "pergunta": "O que tornou 2007 um marco histórico na tecnologia?",
+        "opcoes": ["O lançamento do iPhone, que levou a internet para os smartphones", 
+        "A criação do MySpace", 
+        "O surgimento do YouTube", 
+        "A popularização dos computadores domésticos"],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual foi a grande inovação do iPhone em 2007?",
+        "opcoes": ["Tela multitouch e navegação real pela Web", 
+        "Primeira câmera de celular da história", 
+        "A maior capacidade de bateria", 
+        "Teclado físico retrátil"],
+        "correta": 0
+      },
+      {
+        "pergunta": "Antes do iPhone, o acesso à internet pelo celular era…",
+        "opcoes": ["Igual ao acesso em computadores",
+          "Limitado apenas a redes sociais",
+          "Difícil, lento e pouco utilizado",
+          "Exclusivo para aparelhos Android"],
+        "correta": 2
+      },
+      {
+        "pergunta": "O anúncio do iPhone feito por Steve Jobs apresentou o aparelho como…",
+        "opcoes": ["Um console portátil", 
+        "Um substituto para notebooks", 
+        "Uma câmera profissional", 
+        "Um iPod widescreen, telefone revolucionário e dispositivo de internet"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Qual indústria reagiu rapidamente ao lançamento do iPhone?",
+        "opcoes": ["Indústria automobilística", 
+        "Fabricantes de celulares, impulsionando o Android", 
+        "Empresas de televisores", 
+        "Fabricantes de consoles de videogame"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual hábito começou a surgir graças ao celular com internet + câmera?",
+        "opcoes": ["Ligar menos para familiares",
+          "Fotografar e postar instantaneamente",
+          "Enviar cartas digitais por correio físico",
+          "Baixar músicas apenas por computadores"],
+        "correta": 1
+      },
+      {
+        "pergunta": "Em 2007, o que começou a ganhar força e seria essencial para vários serviços modernos?",
+        "opcoes": ["Compra de músicas em fitas cassete",
+          "Jogos em CD-ROM para celulares",
+          "Impressoras conectadas via cabo",
+          "Geolocalização e uso de mapas em tempo real"],
+        "correta": 3
+      },
+      {
+        "pergunta": "A App Store não existia em 2007. Ela surgiria em 2008, mas o conceito já era…",
+        "opcoes": ["Permitir jogos em cartuchos", 
+        "Criar redes sociais exclusivas", 
+        "Substituir computadores inteiros", 
+        "Transformar o celular em uma plataforma expandida por apps"],
+        "correta": 3
+      },
+      {
+        "pergunta": "Como o smartphone mudou a relação das pessoas com a internet?",
+        "opcoes": ["Tornou a internet pessoal, contínua e presente no bolso", 
+        "Tornou a internet exclusiva para empresas", 
+        "Reduziu o uso de redes sociais", 
+        "Eliminou completamente o uso de computadores"],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual fenômeno começou a se fortalecer com os smartphones em 2007?",
+        "opcoes": ["Navegação apenas offline",
+          "Mensagens enviadas somente por SMS",
+          "Cultura de notificações e tempo real",
+          "Redução do uso da internet móvel"],
+        "correta": 2
+      }
+    ]
+  }
+  </script>
+
+  <!-- Logo -->
+  <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+
+  <button class="btn-voltar" onclick="window.history.back()">
+    <span>← Voltar</span>
+  </button>
+
+  <!-- Botão de modo escuro/claro -->
+  <button class="btn-toggle" onclick="toggleMode()">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <header>
+    <h1>📱 Quiz - 2007: </h1>
+    <h2>Teste seus conhecimentos sobre este marco histórico</h2>
+  </header>
+
+  <main>
+    <!-- Tela inicial -->
+    <div id="tela-inicial" class="container-quiz">
+      <div class="card-inicio">
+        <div class="icone-quiz">🎯</div>
+        <h2>Bem-vindo ao Quiz!</h2>
+        <p><h3>Você irá responder <strong>10 questões</strong><h3></p>
+        <p class="info-tempo"><h3>⏱️ Sem limite de tempo - responda com calma!</h3></p>
+        <button class="btn-iniciar" onclick="iniciarQuiz()">Começar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Tela do quiz -->
+    <div id="tela-quiz" class="container-quiz" style="display: none;">
+      <div class="progresso-bar">
+        <div class="progresso-fill" id="progresso-fill"></div>
+      </div>
+      <div class="info-questao">
+        <span id="numero-questao">Questão 1 de 10</span>
+        <span id="pontuacao-atual">Pontos: 0</span>
+      </div>
+
+      <div class="card-questao">
+        <h3 id="texto-questao"></h3>
+        <div id="opcoes-container" class="opcoes-container"></div>
+        <button id="btn-proxima" class="btn-proxima" onclick="proximaQuestao()" style="display: none;">
+          Próxima Questão →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="tela-resultado" class="container-quiz" style="display: none;">
+      <div class="card-resultado">
+        <div id="icone-resultado"></div>
+        <h2 id="titulo-resultado"></h2>
+        <div class="pontuacao-final">
+          <span class="pontos-numero" id="pontos-final">0</span>
+          <span class="pontos-texto"><h3>de 100 pontos</h3></span>
+        </div>
+        <div class="estatisticas">
+          <div class="stat-item">
+            <span class="stat-label"><h3>Acertos</h3></span>
+            <span class="stat-valor" id="total-acertos">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Erros</h3></span>
+            <span class="stat-valor" id="total-erros">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label"><h3>Aproveitamento</h3></span>
+            <span class="stat-valor" id="percentual">0%</span>
+          </div>
+        </div>
+        <p id="mensagem-resultado"></p>
+        <div class="botoes-resultado">
+          <button class="btn-refazer" onclick="reiniciarQuiz()">🔄 Refazer Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="./js/quizreciclavel.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>
