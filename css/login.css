@@ -1,0 +1,901 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis CSS - Modo Claro */
+:root {
+    --bg-body: #ffe5cc;
+    --text-body: #662d13;
+    --bg-card: #ffffff;
+    --bg-header: #e9bd95;
+    --accent: #FB7621;
+    --accent-hover: #d96318;
+    --border: #662d13;
+    --shadow: rgba(102, 45, 19, 0.2);
+    
+    /* Variáveis adicionais do padrão do museu */
+    --cor-primaria: #FB7621;
+    --cor-primaria-hover: #e86510;
+    --cor-primaria-light: #ffa04d;
+    --cor-fundo-claro: #fff5eb;
+    --cor-fundo-claro-alt: #ffe5cc;
+    --cor-fundo-escuro: #0f0f0f;
+    --cor-fundo-escuro-alt: #1a1a1a;
+    --cor-texto-claro: #2c2c2c;
+    --cor-texto-escuro: #f0f0f0;
+    
+    /* Espaçamentos */
+    --espacamento-xs: 8px;
+    --espacamento-sm: 12px;
+    --espacamento-md: 20px;
+    --espacamento-lg: 32px;
+    
+    /* Transições */
+    --transicao-media: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sombras */
+    --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --sombra-forte: 0 8px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Variáveis CSS - Modo Escuro */
+body.dark-mode {
+    --bg-body: #1a1a1a;
+    --text-body: #f0f0f0;
+    --bg-card: #2a2a2a;
+    --bg-header: #333333;
+    --accent: #ff9800;
+    --accent-hover: #f57c00;
+    --border: #ff9800;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Body */
+body {
+    font-family: 'Merriweather', serif;
+    background: var(--bg-body);
+    color: var(--text-body);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de fundo animado */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(251, 118, 33, 0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==================== LOGO (PADRÃO DO MUSEU) ==================== */
+.logo {
+    position: fixed;
+    top: var(--espacamento-md);
+    left: var(--espacamento-md);
+    height: 100px;
+    width: auto;
+    z-index: 100;
+    transition: transform var(--transicao-media);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* ==================== BOTÃO DE ALTERNÂNCIA (PADRÃO DO MUSEU) ==================== */
+.btn-toggle {
+    position: fixed;
+    top: var(--espacamento-md);
+    right: var(--espacamento-md);
+    padding: var(--espacamento-md) var(--espacamento-lg);
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-hover) 100%);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-sm);
+    box-shadow: var(--sombra-media);
+    transition: all var(--transicao-media);
+    z-index: 100;
+}
+
+.btn-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-forte);
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px var(--shadow);
+    min-height: 600px;
+}
+
+/* Lado esquerdo - Decorativo */
+.left-panel {
+    flex: 1;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.left-panel h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.left-panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+.museum-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Lado direito - Formulários */
+.right-panel {
+    flex: 1;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--text-body);
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: var(--text-body);
+    opacity: 0.7;
+}
+
+/* Formulários */
+form {
+    display: none;
+}
+
+form.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-body);
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+    background: var(--bg-body);
+    color: var(--text-body);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(251, 118, 33, 0.1);
+}
+
+body.dark-mode .input-group input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+}
+
+/* Botões */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Merriweather', serif;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Link de alternância */
+.toggle-form {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-body);
+}
+
+.toggle-form p {
+    font-size: 0.95rem;
+}
+
+.toggle-form button {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.toggle-form button:hover {
+    color: var(--accent-hover);
+}
+
+/* Mensagens de erro/sucesso */
+.message {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.error {
+    background: #fecaca;
+    color: #991b1b;
+    border-left: 4px solid #dc2626;
+}
+
+.message.success {
+    background: #bbf7d0;
+    color: #065f46;
+    border-left: 4px solid #059669;
+}
+
+/* ==================== BOTÃO VOLTAR (PADRÃO DO MUSEU) ==================== */
+.btn-voltar {
+    position: fixed;
+    bottom: var(--espacamento-md);
+    left: var(--espacamento-md);
+    padding: var(--espacamento-md) var(--espacamento-lg);
+    background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+    border: 2px solid var(--cor-primaria);
+    border-radius: 30px;
+    color: var(--cor-texto-claro);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-sm);
+    box-shadow: var(--sombra-media);
+    transition: all var(--transicao-media);
+    z-index: 100;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-forte);
+    background: linear-gradient(135deg, var(--cor-primaria-light) 0%, var(--cor-primaria) 100%);
+    color: #fff;
+}
+
+body.dark-mode .btn-voltar {
+    background: linear-gradient(135deg, var(--cor-fundo-escuro-alt) 0%, #2a2a2a 100%);
+    color: var(--cor-texto-escuro);
+    border-color: var(--cor-primaria);
+}
+
+body.dark-mode .btn-voltar:hover {
+    background: linear-gradient(135deg, var(--cor-primaria-light) 0%, var(--cor-primaria) 100%);
+    color: #fff;
+}
+
+/* VLibras */
+.enabled {
+    z-index: 1000 !important;
+}
+
+/* Responsividade - Tablet */
+@media (max-width: 900px) {
+    .container {
+        max-width: 700px;
+    }
+    
+    .left-panel h1 {
+        font-size: 2.2rem;
+    }
+    
+    .left-panel p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade - Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        flex-direction: column;
+        max-width: 500px;
+        min-height: auto;
+    }
+
+    .left-panel {
+        padding: 40px 30px;
+        min-height: 250px;
+    }
+
+    .left-panel h1 {
+        font-size: 2rem;
+    }
+    
+    .left-panel p {
+        font-size: 0.95rem;
+    }
+
+    .museum-icon {
+        font-size: 60px;
+        margin-bottom: 15px;
+    }
+
+    .right-panel {
+        padding: 40px 30px;
+    }
+    
+    .form-header h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Logo e botões mobile (padrão do museu) */
+    .logo {
+        height: 70px;
+        top: var(--espacamento-sm);
+        left: var(--espacamento-sm);
+    }
+
+    .btn-toggle {
+        top: var(--espacamento-sm);
+        right: var(--espacamento-sm);
+        font-size: 0.95rem;
+        padding: var(--espacamento-sm) var(--espacamento-md);
+    }
+
+    .btn-voltar {
+        bottom: var(--espacamento-sm);
+        left: var(--espacamento-sm);
+        font-size: 0.95rem;
+        padding: var(--espacamento-sm) var(--espacamento-md);
+    }
+}
+
+/* Responsividade - Mobile Pequeno */
+@media (max-width: 480px) {
+    .container {
+        border-radius: 15px;
+    }
+    
+    .left-panel {
+        padding: 30px 20px;
+        min-height: 200px;
+    }
+    
+    .left-panel h1 {
+        font-size: 1.75rem;
+    }
+    
+    .museum-icon {
+        font-size: 50px;
+    }
+    
+    .right-panel {
+        padding: 30px 20px;
+    }
+    
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group input {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-submit {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}
+/* ==================== ESTILOS DE ACESSIBILIDADE (INSERIDOS) ==================== */
+
+/* O botão de acessibilidade foi movido para a direita no arquivo 1958.css, mantendo o padrão. */
+.accessibility-button {
+  position: fixed;
+  bottom: var(--espacamento-md);
+  right: var(--espacamento-md);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--sombra-media);
+  transition: all var(--transicao-media);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accessibility-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--sombra-forte);
+}
+
+.accessibility-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ==================== MENU DE ACESSIBILIDADE ==================== */
+.accessibility-menu {
+  position: fixed;
+  bottom: calc(var(--espacamento-md) + 80px);
+  right: var(--espacamento-md);
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  backdrop-filter: blur(10px);
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  box-shadow: var(--sombra-forte); /* Usando sombra forte para destaque */
+  z-index: 99;
+  display: none;
+  width: 320px;
+  max-width: calc(100vw - 2 * var(--espacamento-md));
+  border: 2px solid #007BFF;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+body.dark-mode .accessibility-menu {
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  border-color: #0056b3;
+}
+
+.accessibility-menu.active {
+  display: block;
+  animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accessibility-menu h3 {
+  font-family: 'Playfair Display', serif; /* Usando a fonte de display do projeto */
+  font-size: 1.4rem;
+  margin: 0 0 var(--espacamento-md);
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: var(--espacamento-xs);
+}
+
+body.dark-mode .accessibility-menu h3 {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.accessibility-section {
+  margin-bottom: var(--espacamento-md);
+}
+
+.accessibility-section h4 {
+  font-size: 1rem;
+  margin-bottom: var(--espacamento-xs);
+  color: #fff;
+  font-weight: 600;
+}
+
+body.dark-mode .accessibility-section h4 {
+  color: #fff;
+}
+
+.font-size-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-xs);
+}
+
+.font-size-controls button {
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transicao-rapida);
+  text-align: left;
+}
+
+.font-size-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: translateX(5px);
+  border-color: #fff;
+}
+
+.font-size-controls button.active {
+  background: #fff;
+  color: #007BFF;
+  border-color: #fff;
+}
+
+body.dark-mode .font-size-controls button {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.accessibility-action {
+  width: 100%;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transicao-rapida);
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-xs);
+}
+
+.accessibility-action:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: translateX(5px);
+  border-color: #fff;
+}
+
+body.dark-mode .accessibility-action {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.accessibility-action .icon {
+  font-size: 1.2rem;
+}
+
+/* ==================== LEITOR DE TELA ==================== */
+.screen-reader-controls {
+  display: flex;
+  gap: var(--espacamento-xs);
+  margin-top: var(--espacamento-xs);
+}
+
+.screen-reader-controls button {
+  flex: 1;
+  padding: var(--espacamento-xs);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transicao-rapida);
+}
+
+.screen-reader-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+}
+
+.screen-reader-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reading-highlight {
+  /* Usando cores do tema para o destaque */
+  background-color: rgba(72, 100, 255, 0.3) !important; 
+  outline: 2px solid #007BFF !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* ==================== CONTROLES DE TAMANHO DE FONTE ==================== */
+body.font-small {
+  font-size: 15px;
+}
+
+body.font-medium {
+  font-size: 20px;
+}
+
+body.font-large {
+  font-size: 30px;
+}
+
+/* Estilos de fonte para elementos específicos da página de login */
+body.font-large .container {
+  font-size: 1.2rem;
+}
+
+body.font-large .form-header h2 {
+  font-size: 2.5rem;
+}
+
+body.font-large .input-group label {
+  font-size: 1.1rem;
+}
+
+body.font-large .input-group input {
+  font-size: 1.3rem;
+  padding: 18px 22px;
+}
+
+body.font-small .container {
+  font-size: 0.9rem;
+}
+
+body.font-small .form-header h2 {
+  font-size: 1.8rem;
+}
+
+body.font-small .input-group label {
+  font-size: 0.8rem;
+}
+
+body.font-small .input-group input {
+  font-size: 0.9rem;
+  padding: 10px 14px;
+}
+
+/* ==================== ALTO CONTRASTE ==================== */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast .container,
+body.high-contrast .right-panel,
+body.high-contrast .form-container,
+body.high-contrast .left-panel {
+  background: #000 !important;
+  color: #fff !important;
+  border: 3px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+body.high-contrast .left-panel {
+  border-right: none !important;
+}
+
+body.high-contrast .left-panel h1,
+body.high-contrast .form-header h2 {
+  color: #ffff00 !important;
+}
+
+body.high-contrast .input-group label,
+body.high-contrast .form-header p,
+body.high-contrast .toggle-form p {
+  color: #fff !important;
+}
+
+body.high-contrast .input-group input {
+  background: #000 !important;
+  color: #fff !important;
+  border: 3px solid #ffff00 !important;
+}
+
+body.high-contrast .btn-submit {
+  background: #ffff00 !important;
+  color: #000 !important;
+  border: 3px solid #ffff00 !important;
+}
+
+body.high-contrast .toggle-form button {
+  color: #ffff00 !important;
+}
+
+body.high-contrast .btn-voltar {
+  background: #000 !important;
+  color: #fff !important;
+  border: 3px solid #ffff00 !important;
+}
+
+body.high-contrast .btn-toggle {
+  background: #000 !important;
+  color: #fff !important;
+  border: 3px solid #ffff00 !important;
+}
+
+/* ==================== MEDIA QUERIES PARA ACESSIBILIDADE ==================== */
+@media (max-width: 768px) {
+  .accessibility-button {
+    bottom: var(--espacamento-sm);
+    right: var(--espacamento-sm);
+    width: 50px;
+    height: 50px;
+  }
+
+  .accessibility-menu {
+    bottom: calc(var(--espacamento-sm) + 60px);
+    right: var(--espacamento-sm);
+    left: auto;
+    width: 280px;
+    max-width: calc(100vw - 2 * var(--espacamento-sm));
+  }
+}
+
+/* ESCONDER o botão azul que vem do auth.js */
+#btn-usuario,
+.btn-usuario {
+    display: none !important;
+}
+
+/* Botão de perfil LARANJA abaixo do botão de modo */
+.btn-perfil {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    padding: 20px 32px;
+    background: linear-gradient(135deg, #FB7621 0%, #e86510 100%);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+.btn-perfil:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(135deg, #e86510 0%, #d96318 100%);
+}
+
+.btn-perfil .icon {
+    font-size: 1.2rem;
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px) {
+    .btn-perfil {
+        top: 70px;
+        right: 12px;
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+
+    .btn-perfil .text {
+        display: none;
+    }
+}
