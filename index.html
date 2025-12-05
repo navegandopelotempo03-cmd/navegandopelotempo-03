@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museu Interativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/museu.css">
+</head>
+
+<body>
+  <!-- Efeito de partículas de fundo -->
+  <div class="particles-background" id="particles"></div>
+  
+  <!-- Botão de alternância de modo -->
+  <button class="btn-toggle" onclick="toggleMode()" aria-label="Alternar modo escuro/claro">
+    <span class="icon">🌙</span>
+    <span class="text">Modo Escuro</span>
+  </button>
+
+  <button class="btn-perfil" onclick="window.location.href='perfil.html'">
+    <span class="icon">👤</span>
+    <span class="text" id="nome-usuario-header">Perfil</span>
+</button>
+  
+  <header>
+    <img src="./img/logo.png" alt="Logo do Museu Interativo" class="logo">
+  </header>
+
+  <main class="container">
+    <!-- Título da página -->
+    <div class="titulo-secao">
+      <h1 class="titulo-principal">Bem-vindo ao Museu</h1>
+      <p class="subtitulo">Explore nossa coleção interativa e imersiva</p>
+    </div>
+
+    <div class="museu">
+      <!-- Teto - Substituindo o triângulo CSS pela imagem teto.png -->
+      <img src="./img/teto.png" alt="Teto do Museu" class="teto relevo">
+
+      <!-- Corpo com pilares e botões -->
+      <div class="corpo">
+        <!-- Pilar da esquerda -->
+        <img src="./img/pilar.png" alt="Pilar decorativo" class="pilar relevo">
+
+        <!-- Vãos com botões -->
+        <div class="vao">
+          <button class="botao" onclick="irPara('login.html')" aria-label="Ir para página de cadastro">
+            <span class="botao-icon">👤</span>
+            <span class="botao-text">Cadastro</span>
+          </button>
+        </div>
+        
+        <img src="./img/pilar.png" alt="Pilar decorativo" class="pilar relevo">
+
+        <div class="vao">
+          <button class="botao" onclick="irPara('linhatemporal.html')" aria-label="Ir para linha temporal">
+            <span class="botao-icon">⌛</span>
+            <span class="botao-text">Linha Temporal</span>
+          </button>
+        </div>
+        
+        <img src="./img/pilar.png" alt="Pilar decorativo" class="pilar relevo">
+
+        <div class="vao">
+          <button class="botao" onclick="irPara('quizzes.html')" aria-label="Ir para quiz">
+            <span class="botao-icon">🎯</span>
+            <span class="botao-text">Quiz</span>
+          </button>
+        </div>
+
+        <!-- Pilar da direita -->
+        <img src="./img/pilar.png" alt="Pilar decorativo" class="pilar relevo">
+      </div>
+
+      <!-- Escada - Adicionando a escadaria abaixo do corpo -->
+      <img src="./img/escada.png" alt="Escadaria do Museu" class="escada relevo">
+
+      <!-- Sombra do chão -->
+      <div class="sombra-chao"></div>
+    </div>
+
+  </main>
+
+  <!-- Botão de Acessibilidade -->
+  <button class="accessibility-button" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="8" r="1.5"></circle>
+      <path d="M12 10v4"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8 12h8"></path>
+    </svg>
+  </button>
+
+  <!-- Menu de Acessibilidade -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <h3>♿ Acessibilidade</h3>
+    
+    <div class="accessibility-section">
+      <h4>Tamanho da Fonte</h4>
+      <div class="font-size-controls">
+        <button onclick="changeFontSize('small')">🔤 Pequeno</button>
+        <button onclick="changeFontSize('medium')" class="active">🔤 Médio</button>
+        <button onclick="changeFontSize('large')">🔤 Grande</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Contraste</h4>
+      <button class="accessibility-action" onclick="toggleHighContrast()">
+        <span class="icon">⚫⚪</span>
+        Alto Contraste
+      </button>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Leitor de Tela</h4>
+      <button class="accessibility-action" onclick="toggleScreenReader()">
+        <span class="icon">🔊</span>
+        <span id="screenReaderText">Ativar Leitor</span>
+      </button>
+      <div class="screen-reader-controls" id="readerControls" style="display: none;">
+        <button onclick="pauseReading()" id="pauseBtn">⏸️</button>
+        <button onclick="resumeReading()" id="resumeBtn">▶️</button>
+        <button onclick="stopReading()">⏹️</button>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <h4>Libras</h4>
+      <button class="accessibility-action" onclick="toggleVLibras()">
+        <span class="icon">🤟</span>
+        Ativar VLibras
+      </button>
+    </div>
+  </div>
+
+  <!-- VLibras -->
+  <div vw class="enabled" id="vlibras-widget" style="display: none;">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script src="./js/museu.js"></script>
+  <script src="./js/auth.js"></script>
+
+  <script>
+    // ==================== MENU DE ACESSIBILIDADE ====================
+    function toggleAccessibilityMenu() {
+      const menu = document.getElementById('accessibilityMenu');
+      menu.classList.toggle('active');
+    }
+
+    // ==================== CONTROLE DE TAMANHO DE FONTE ====================
+    function changeFontSize(size) {
+      const body = document.body;
+      body.classList.remove('font-small', 'font-medium', 'font-large');
+      body.classList.add('font-' + size);
+      
+      document.querySelectorAll('.font-size-controls button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // ==================== ALTO CONTRASTE ====================
+    let highContrastEnabled = false;
+    function toggleHighContrast() {
+      highContrastEnabled = !highContrastEnabled;
+      document.body.classList.toggle('high-contrast', highContrastEnabled);
+      
+      const btn = event.target.closest('button');
+      btn.style.background = highContrastEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ==================== LEITOR DE TELA ====================
+    let screenReaderEnabled = false;
+    let currentUtterance = null;
+    let isPaused = false;
+
+    function toggleScreenReader() {
+      screenReaderEnabled = !screenReaderEnabled;
+      const btn = event.target.closest('button');
+      const text = document.getElementById('screenReaderText');
+      const controls = document.getElementById('readerControls');
+      
+      if (screenReaderEnabled) {
+        text.textContent = 'Desativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.3)';
+        controls.style.display = 'flex';
+        startReading();
+      } else {
+        text.textContent = 'Ativar Leitor';
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+        controls.style.display = 'none';
+        stopReading();
+      }
+    }
+
+    function startReading() {
+      if ('speechSynthesis' in window) {
+        const mainContent = document.querySelector('main');
+        let textToRead = '';
+        
+        const titulo = document.querySelector('.titulo-principal');
+        const subtitulo = document.querySelector('.subtitulo');
+        
+        if (titulo) textToRead += titulo.textContent + '. ';
+        if (subtitulo) textToRead += subtitulo.textContent + '. ';
+        
+        const botoes = document.querySelectorAll('.botao-text');
+        botoes.forEach(btn => {
+          textToRead += 'Botão: ' + btn.textContent + '. ';
+        });
+        
+        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+        currentUtterance.lang = 'pt-BR';
+        currentUtterance.rate = 0.9;
+        currentUtterance.pitch = 1;
+        currentUtterance.volume = 1;
+        
+        currentUtterance.onend = function() {
+          if (screenReaderEnabled) {
+            document.getElementById('screenReaderText').textContent = 'Leitura Concluída';
+          }
+        };
+        
+        window.speechSynthesis.speak(currentUtterance);
+      } else {
+        alert('Desculpe, seu navegador não suporta síntese de voz.');
+      }
+    }
+
+    function pauseReading() {
+      if (window.speechSynthesis.speaking && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+      }
+    }
+
+    function resumeReading() {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+      }
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      isPaused = false;
+    }
+
+    // ==================== VLIBRAS ====================
+    let vlibrasEnabled = false;
+    function toggleVLibras() {
+      vlibrasEnabled = !vlibrasEnabled;
+      const widget = document.getElementById('vlibras-widget');
+      widget.style.display = vlibrasEnabled ? 'block' : 'none';
+      
+      const btn = event.target.closest('button');
+      btn.style.background = vlibrasEnabled ? 
+        'rgba(255, 255, 255, 0.3)' : 
+        'rgba(255, 255, 255, 0.1)';
+    }
+
+    // ==================== FECHAR MENU AO CLICAR FORA ====================
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('accessibilityMenu');
+      const button = document.querySelector('.accessibility-button');
+      
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+      }
+    });
+
+    // ==================== LIMPAR LEITURA AO SAIR ====================
+    window.addEventListener('beforeunload', function() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+      }
+    });
+  </script>
+</body>
+</html>
